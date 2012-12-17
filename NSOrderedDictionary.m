@@ -36,9 +36,9 @@
     return [[NSOrderedDictionary alloc] initWithObjects:[NSArray arrayWithObject:anObject] pairedWithKeys:[NSArray arrayWithObject:aKey]];
 }
 
-+ (id)orderedDictionaryWithDictionary:(NSDictionary *)items
++ (id)orderedDictionaryWithDictionary:(NSDictionary *)entrys
 {
-    return [[NSOrderedDictionary alloc] initWithContentsOfDictionary:items];
+    return [[NSOrderedDictionary alloc] initWithContentsOfDictionary:entrys];
 }
 
 #pragma mark - initialization
@@ -56,10 +56,10 @@
 
 - (id)initWithOrderedDictionary:(NSOrderedDictionary *)orderedDictionary
 {
-    return [self initWithOrderedDictionary:orderedDictionary copyItems:NO];
+    return [self initWithOrderedDictionary:orderedDictionary copyEntrys:NO];
 }
 
-- (id)initWithOrderedDictionary:(NSOrderedDictionary *)orderedDictionary copyItems:(BOOL)flag
+- (id)initWithOrderedDictionary:(NSOrderedDictionary *)orderedDictionary copyEntrys:(BOOL)flag
 {
     self = [super init];
     if (self != nil) {
@@ -82,15 +82,15 @@
     return [self initWithObjects:[rawData objectForKey:@"Objects"] pairedWithKeys:[rawData objectForKey:@"Keys"]];
 }
 
-- (id)initWithContentsOfDictionary:(NSDictionary *)items
+- (id)initWithContentsOfDictionary:(NSDictionary *)entrys
 {
     return [self init];
     if (self != nil) {
-        keys = [[NSMutableArray alloc] initWithArray:items.allKeys];
+        keys = [[NSMutableArray alloc] initWithArray:entrys.allKeys];
         objects = [[NSMutableArray alloc] init];
         //Must loop through all keys, since order from NSDictionary is not defined.
         for (id key in keys) {
-            [objects addObject:[items objectForKey:key]];
+            [objects addObject:[entrys objectForKey:key]];
         }
         pairs = [[NSMutableDictionary alloc] initWithObjects:objects forKeys:keys];
     }
@@ -125,9 +125,9 @@
     return NO;
 }
 
-- (BOOL)containsItem:(NSDictionary *)item
+- (BOOL)containsEntry:(NSDictionary *)entry
 {
-    return [self containsObject:[item.allValues objectAtIndex:0] pairedWithKey:[item.allKeys objectAtIndex:0]];
+    return [self containsObject:[entry.allValues objectAtIndex:0] pairedWithKey:[entry.allKeys objectAtIndex:0]];
 }
 
 - (NSUInteger)count
@@ -145,7 +145,7 @@
     return keys.lastObject;
 }
 
-- (NSDictionary *)lastItem
+- (NSDictionary *)lastEntry
 {
     return [NSDictionary dictionaryWithObject:objects.lastObject forKey:keys.lastObject];
 }
@@ -160,7 +160,7 @@
     return [keys lastObject];
 }
 
-- (NSDictionary *)itemAtIndex:(NSUInteger)index
+- (NSDictionary *)entryAtIndex:(NSUInteger)index
 {
     return [NSDictionary dictionaryWithObject:[self objectAtIndex:index] forKey:[keys objectAtIndex:index]];
 }
@@ -175,12 +175,12 @@
     return [keys objectsAtIndexes:indexes];
 }
 
-- (NSOrderedDictionary *)itemsAtIndexes:(NSIndexSet *)indexes
+- (NSOrderedDictionary *)entrysAtIndexes:(NSIndexSet *)indexes
 {
     return [[NSOrderedDictionary alloc] initWithObjects:[objects objectsAtIndexes:indexes] pairedWithKeys:[keys objectsAtIndexes:indexes]];
 }
 
-- (NSDictionary *)unorderedItemsAtIndexes:(NSIndexSet *)indexes
+- (NSDictionary *)unorderedEntrysAtIndexes:(NSIndexSet *)indexes
 {
     return [NSDictionary dictionaryWithObjects:[objects objectsAtIndexes:indexes] forKeys:[keys objectsAtIndexes:indexes]];
 }
@@ -222,11 +222,11 @@
     return [keys objectEnumerator];
 }
 
-- (NSEnumerator *)itemEnumerator
+- (NSEnumerator *)entryEnumerator
 {
     NSMutableArray *temp = [[NSMutableArray alloc] init];
     for (int i = 0; i < keys.count; i++) {
-        [temp addObject:[self itemAtIndex:i]];
+        [temp addObject:[self entryAtIndex:i]];
     }
     return [temp objectEnumerator];
 }
@@ -241,11 +241,11 @@
     return [keys reverseObjectEnumerator];
 }
 
-- (NSEnumerator *)reverseItemEnumerator
+- (NSEnumerator *)reverseEntryEnumerator
 {
     NSMutableArray *temp = [[NSMutableArray alloc] init];
     for (int i = keys.count - 1; i >= 0; i++) {
-        [temp addObject:[self itemAtIndex:i]];
+        [temp addObject:[self entryAtIndex:i]];
     }
     return [temp objectEnumerator];
 }
@@ -262,7 +262,7 @@
     return [keys indexOfObject:key];
 }
 
-- (NSUInteger)indexOfItemWithObject:(id)object pairedWithKey:(id<NSCopying>)key
+- (NSUInteger)indexOfEntryWithObject:(id)object pairedWithKey:(id<NSCopying>)key
 {
     NSIndexSet *idx1 = [objects indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         return [obj isEqual:object];
@@ -282,9 +282,9 @@
     return index;
 }
 
-- (NSUInteger)indexOfItem:(NSDictionary *)item
+- (NSUInteger)indexOfEntry:(NSDictionary *)entry
 {
-    return [self indexOfItemWithObject:[item.allValues objectAtIndex:0] pairedWithKey:[item.allKeys objectAtIndex:0]];
+    return [self indexOfEntryWithObject:[entry.allValues objectAtIndex:0] pairedWithKey:[entry.allKeys objectAtIndex:0]];
 }
 
 - (NSUInteger)indexOfObject:(id)object inRange:(NSRange)range
@@ -297,7 +297,7 @@
     return [keys indexOfObject:key inRange:range];
 }
 
-- (NSUInteger)indexOfItemWithObject:(id)object pairedWithKey:(id<NSCopying>)key inRange:(NSRange)range
+- (NSUInteger)indexOfEntryWithObject:(id)object pairedWithKey:(id<NSCopying>)key inRange:(NSRange)range
 {
     NSIndexSet *idx1 = [[objects objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range]]indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         return [obj isEqual:object];
@@ -317,9 +317,9 @@
     return index;
 }
 
-- (NSUInteger)indexOfItem:(NSDictionary *)item inRange:(NSRange)range
+- (NSUInteger)indexOfEntry:(NSDictionary *)entry inRange:(NSRange)range
 {
-    return [self indexOfItemWithObject:[item.allValues objectAtIndex:0] pairedWithKey:[item.allKeys objectAtIndex:0] inRange:range];
+    return [self indexOfEntryWithObject:[entry.allValues objectAtIndex:0] pairedWithKey:[entry.allKeys objectAtIndex:0] inRange:range];
 }
 
 - (NSUInteger)indexOfObjectIdenticalTo:(id)object
@@ -451,7 +451,7 @@
     return [keys firstObjectCommonWithArray:otherOrderedDictionary.allKeys];
 }
 
-- (id)firstItemInCommonWithOrderedDictionary:(NSOrderedDictionary *)otherOrderedDictionary
+- (id)firstEntryInCommonWithOrderedDictionary:(NSOrderedDictionary *)otherOrderedDictionary
 {
     NSArray *temp1 = [keys firstObjectCommonWithArray:otherOrderedDictionary.allKeys];
     
@@ -486,9 +486,9 @@
     return [[NSOrderedDictionary alloc] initWithObjects:[objects arrayByAddingObject:object] pairedWithKeys:[keys arrayByAddingObject:aKey]];
 }
 
-- (NSOrderedDictionary *)orderedDictionaryByAddingItem:(NSDictionary *)item
+- (NSOrderedDictionary *)orderedDictionaryByAddingEntry:(NSDictionary *)entry
 {
-    return [[NSOrderedDictionary alloc] initWithObjects:[objects arrayByAddingObject:[item.allValues objectAtIndex:0]] pairedWithKeys:[keys arrayByAddingObject:[item.allKeys objectAtIndex:0]]];
+    return [[NSOrderedDictionary alloc] initWithObjects:[objects arrayByAddingObject:[entry.allValues objectAtIndex:0]] pairedWithKeys:[keys arrayByAddingObject:[entry.allKeys objectAtIndex:0]]];
 }
 
 - (NSOrderedDictionary *)orderedDictionaryByAddingObjects:(NSArray *)orderedObjects pairedWithKeys:(NSArray *)orderedKeys
@@ -496,7 +496,7 @@
     return [[NSOrderedDictionary alloc] initWithObjects:[objects arrayByAddingObjectsFromArray:orderedObjects] pairedWithKeys:[keys arrayByAddingObjectsFromArray:orderedKeys]];
 }
 
-- (NSOrderedDictionary *)filteredOrderDictionaryUsingPredicate:(NSPredicate *)predicate
+- (NSOrderedDictionary *)filteredOrderDictionarysUsingPredicateForObjects:(NSPredicate *)predicate
 {
     NSArray *tempObj = [objects filteredArrayUsingPredicate:predicate];
     int i = 0;
@@ -703,10 +703,10 @@
 }
 
 #pragma mark - NSCoding
-- (void)encodeWithEncoder:(NSCoder *)encoder
+- (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [encoder encodeObject:objects forKey:@"NSODObjects"];
-    [encoder encodeObject:keys forKey:@"NSODKeys"];
+    [aCoder encodeObject:objects forKey:@"NSODObjects"];
+    [aCoder encodeObject:keys forKey:@"NSODKeys"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder
@@ -756,14 +756,14 @@
 
 #pragma mark - Creating
 
-+ (id)orderedDictionaryWithCapacity:(NSUInteger)numItems
++ (id)orderedDictionaryWithCapacity:(NSUInteger)numEntrys
 {
-    return [[NSMutableOrderedDictionary alloc] initWithCapacity:numItems];
+    return [[NSMutableOrderedDictionary alloc] initWithCapacity:numEntrys];
 }
 
-- (id)initWithCapacity:(NSUInteger)numItems
+- (id)initWithCapacity:(NSUInteger)numEntrys
 {
-    return [[NSMutableOrderedDictionary alloc] initWithObjects:[NSMutableArray arrayWithCapacity:numItems] pairedWithKeys:[NSMutableArray arrayWithCapacity:numItems]];
+    return [[NSMutableOrderedDictionary alloc] initWithObjects:[NSMutableArray arrayWithCapacity:numEntrys] pairedWithKeys:[NSMutableArray arrayWithCapacity:numEntrys]];
 }
 
 #pragma mark - Adding Objects
@@ -771,16 +771,16 @@
 - (void)addObject:(id)object pairedWithKey:(id<NSCopying>)key
 {
     if ([pairs objectForKey:key] != nil) {
-        [self removeItemWithKey:key];
+        [self removeEntryWithKey:key];
     }
     [pairs setObject:object forKey:key];
     [keys addObject:key];
     [objects addObject:object];
 }
 
-- (void)addItem:(NSDictionary *)item
+- (void)addEntry:(NSDictionary *)entry
 {
-    [self addObject:[item.allValues objectAtIndex:0] pairedWithKey:[item.allKeys objectAtIndex:0]];
+    [self addObject:[entry.allValues objectAtIndex:0] pairedWithKey:[entry.allKeys objectAtIndex:0]];
 }
 
 - (void)addEntriesFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary
@@ -806,26 +806,26 @@
         } else {
             idx = index;
         }
-        [self removeItemWithKey:key];
+        [self removeEntryWithKey:key];
     }
     [pairs setObject:object forKey:key];
     [keys insertObject:key atIndex:idx];
     [objects insertObject:object atIndex:idx];
 }
 
-- (void)insertItem:(NSDictionary *)item atIndex:(NSUInteger)index
+- (void)insertEntry:(NSDictionary *)entry atIndex:(NSUInteger)index
 {
-    [self insertObject:[item.allValues objectAtIndex:0] pairedWithKey:[item.allKeys objectAtIndex:0] atIndex:index];
+    [self insertObject:[entry.allValues objectAtIndex:0] pairedWithKey:[entry.allKeys objectAtIndex:0] atIndex:index];
 }
 
-- (void)insertItemsFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary atIndex:(NSUInteger)index
+- (void)insertEntrysFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary atIndex:(NSUInteger)index
 {
     for (int i = 0; i < orderedDictionary.count; i++) {
         [self insertObject:[orderedDictionary objectAtIndex:i] pairedWithKey:[orderedDictionary keyAtIndex:i] atIndex:(index + i)];
     }
 }
 
-- (void)insertItemsFromDictionary:(NSDictionary *)dictionary atIndex:(NSUInteger)index
+- (void)insertEntrysFromDictionary:(NSDictionary *)dictionary atIndex:(NSUInteger)index
 {
     int i = index;
     for (id key in dictionary.allKeys) {
@@ -844,9 +844,9 @@
     }
 }
 
-- (void)setItem:(NSDictionary *)item
+- (void)setEntry:(NSDictionary *)entry
 {
-    [self setObject:[item.allValues objectAtIndex:0] forKey:[item.allKeys objectAtIndex:0]];
+    [self setObject:[entry.allValues objectAtIndex:0] forKey:[entry.allKeys objectAtIndex:0]];
 }
 
 - (void)setEntriesFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary
@@ -873,9 +873,9 @@
     }
 }
 
-- (void)setItem:(NSDictionary *)item atIndex:(NSUInteger)index
+- (void)setEntry:(NSDictionary *)entry atIndex:(NSUInteger)index
 {
-    [self setObject:[item.allValues objectAtIndex:0] forKey:[item.allKeys objectAtIndex:0] atIndex:index];
+    [self setObject:[entry.allValues objectAtIndex:0] forKey:[entry.allKeys objectAtIndex:0] atIndex:index];
 }
 
 - (void)setEntriesFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary atIndex:(NSUInteger)index
@@ -896,59 +896,59 @@
 
 #pragma mark - Removing
 
-- (void)removeAllItems
+- (void)removeAllEntrys
 {
     [keys removeAllObjects];
     [objects removeAllObjects];
     [pairs removeAllObjects];
 }
 
-- (void)removeLastItem
+- (void)removeLastEntry
 {
-    [self removeItemAtIndex:(keys.count - 1)];
+    [self removeEntryAtIndex:(keys.count - 1)];
 }
 
-- (void)removeItemWithObject:(id)object
+- (void)removeEntryWithObject:(id)object
 {
-    [self removeItemAtIndex:[self indexOfObject:object]];
+    [self removeEntryAtIndex:[self indexOfObject:object]];
 }
 
-- (void)removeItemWithKey:(id<NSCopying>)key
+- (void)removeEntryWithKey:(id<NSCopying>)key
 {
-    [self removeItemAtIndex:[self indexOfKey:key]];
+    [self removeEntryAtIndex:[self indexOfKey:key]];
 }
 
-- (void)removeItemWithObject:(id)object pairedWithKey:(id<NSCopying>)key
+- (void)removeEntryWithObject:(id)object pairedWithKey:(id<NSCopying>)key
 {
-    [self removeItemAtIndex:[self indexOfItemWithObject:object pairedWithKey:key]];
+    [self removeEntryAtIndex:[self indexOfEntryWithObject:object pairedWithKey:key]];
 }
 
-- (void)removeItem:(NSDictionary *)item
+- (void)removeEntry:(NSDictionary *)entry
 {
-    [self removeItemWithObject:[item.allValues objectAtIndex:0] pairedWithKey:[item.allKeys objectAtIndex:0]];
+    [self removeEntryWithObject:[entry.allValues objectAtIndex:0] pairedWithKey:[entry.allKeys objectAtIndex:0]];
 }
 
-- (void)removeItemWithObject:(id)object inRange:(NSRange)range
+- (void)removeEntryWithObject:(id)object inRange:(NSRange)range
 {
-    [self removeItemAtIndex:[self indexOfObject:object inRange:range]];
+    [self removeEntryAtIndex:[self indexOfObject:object inRange:range]];
 }
 
-- (void)removeItemWithKey:(id<NSCopying>)key inRange:(NSRange)range
+- (void)removeEntryWithKey:(id<NSCopying>)key inRange:(NSRange)range
 {
-    [self removeItemAtIndex:[self indexOfKey:key inRange:range]];
+    [self removeEntryAtIndex:[self indexOfKey:key inRange:range]];
 }
 
-- (void)removeItemWithObject:(id)object pairedWithKey:(id<NSCopying>)key inRange:(NSRange)ramge
+- (void)removeEntryWithObject:(id)object pairedWithKey:(id<NSCopying>)key inRange:(NSRange)ramge
 {
-    [self removeItemAtIndex:[self indexOfItemWithObject:object pairedWithKey:key inRange:ramge]];
+    [self removeEntryAtIndex:[self indexOfEntryWithObject:object pairedWithKey:key inRange:ramge]];
 }
 
-- (void)removeItem:(NSDictionary *)item inRange:(NSRange)range
+- (void)removeEntry:(NSDictionary *)entry inRange:(NSRange)range
 {
-    [self removeItemAtIndex:[self indexOfItem:item inRange:range]];
+    [self removeEntryAtIndex:[self indexOfEntry:entry inRange:range]];
 }
 
-- (void)removeItemAtIndex:(NSUInteger)index
+- (void)removeEntryAtIndex:(NSUInteger)index
 {
     id key = [keys objectAtIndex:index];
     [keys removeObjectAtIndex:index];
@@ -956,48 +956,48 @@
     [pairs setObject:nil forKey:key];
 }
 
-- (void)removeItemsAtIndexes:(NSIndexSet *)indexes
+- (void)removeEntrysAtIndexes:(NSIndexSet *)indexes
 {
     NSArray *tempKey = [self keysAtIndexes:indexes];
     for (id key in tempKey) {
-        [self removeItemWithKey:key];
+        [self removeEntryWithKey:key];
     }
 }
 
-- (void)removeItemWithObjectIdenticalTo:(id)anObject
+- (void)removeEntryWithObjectIdenticalTo:(id)anObject
 {
-    [self removeItemAtIndex:[self indexOfObjectIdenticalTo:anObject]];
+    [self removeEntryAtIndex:[self indexOfObjectIdenticalTo:anObject]];
 }
 
-- (void)removeItemWithObjectIdenticalTo:(id)anObject inRange:(NSRange)range
+- (void)removeEntryWithObjectIdenticalTo:(id)anObject inRange:(NSRange)range
 {
-    [self removeItemAtIndex:[self indexOfObjectIdenticalTo:anObject inRange:range]];
+    [self removeEntryAtIndex:[self indexOfObjectIdenticalTo:anObject inRange:range]];
 }
 
-- (void)removeItemsWithObjectsInArray:(NSArray *)array
+- (void)removeEntrysWithObjectsInArray:(NSArray *)array
 {
     for (id object in array) {
-        [self removeItemWithObject:object];
+        [self removeEntryWithObject:object];
     }
 }
 
-- (void)removeItemsWithKeysInArray:(NSArray *)array
+- (void)removeEntrysWithKeysInArray:(NSArray *)array
 {
     for (id key in array) {
-        [self removeItemWithKey:key];
+        [self removeEntryWithKey:key];
     }
 }
 
-- (void)removeItemsInRange:(NSRange)range
+- (void)removeEntrysInRange:(NSRange)range
 {
     for (int i = range.location; i < range.location + range.length; i++) {
-        [self removeItemAtIndex:i];
+        [self removeEntryAtIndex:i];
     }
 }
 
 #pragma mark - Replacing Objects
 
-- (void)replaceItemAtIndex:(NSInteger)index withObject:(id)object pairedWithKey:(id<NSCopying>)key
+- (void)replaceEntryAtIndex:(NSInteger)index withObject:(id)object pairedWithKey:(id<NSCopying>)key
 {
     id oldKey = [keys objectAtIndex:index];
     [pairs setObject:nil forKey:oldKey];
@@ -1006,79 +1006,79 @@
     [objects replaceObjectAtIndex:index withObject:object];
 }
 
-- (void)replaceItemAtIndex:(NSUInteger)index withItem:(NSDictionary *)item
+- (void)replaceEntryAtIndex:(NSUInteger)index withEntry:(NSDictionary *)entry
 {
-    [self replaceItemAtIndex:index withObject:[item.allValues objectAtIndex:0] pairedWithKey:[item.allKeys objectAtIndex:0]];
+    [self replaceEntryAtIndex:index withObject:[entry.allValues objectAtIndex:0] pairedWithKey:[entry.allKeys objectAtIndex:0]];
 }
 
-- (void)replaceItemsAtIndexes:(NSIndexSet *)indexes withObjects:(NSArray *)aobjects pairedWithKeys:(NSArray *)akeys
+- (void)replaceEntrysAtIndexes:(NSIndexSet *)indexes withObjects:(NSArray *)aobjects pairedWithKeys:(NSArray *)akeys
 {
     NSUInteger index = [indexes firstIndex];
     int i = 0;
     while (index != NSNotFound) {
         if (i < aobjects.count && i < akeys.count) {
-            [self replaceItemAtIndex:index withObject:[aobjects objectAtIndex:i] pairedWithKey:[akeys objectAtIndex:i]];
+            [self replaceEntryAtIndex:index withObject:[aobjects objectAtIndex:i] pairedWithKey:[akeys objectAtIndex:i]];
         }
         index = [indexes indexGreaterThanIndex:index];
         i++;
     }
 }
 
-- (void)replaceItemsAtIndexes:(NSIndexSet *)indexes withItems:(NSArray *)orderedItems
+- (void)replaceEntrysAtIndexes:(NSIndexSet *)indexes withEntrys:(NSArray *)orderedEntrys
 {
     NSUInteger index = [indexes firstIndex];
     int i = 0;
     while (index != NSNotFound) {
-        if (i < orderedItems.count) {
-            [self replaceItemAtIndex:index withObject:[[orderedItems objectAtIndex:i] objectAtIndex:0] pairedWithKey:[[orderedItems objectAtIndex:i] objectAtIndex:0]];
+        if (i < orderedEntrys.count) {
+            [self replaceEntryAtIndex:index withObject:[[orderedEntrys objectAtIndex:i] objectAtIndex:0] pairedWithKey:[[orderedEntrys objectAtIndex:i] objectAtIndex:0]];
         }
         index = [indexes indexGreaterThanIndex:index];
     }
 }
 
-- (void)replaceItemsAtIndexes:(NSIndexSet *)indexes withItemsFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary
+- (void)replaceEntrysAtIndexes:(NSIndexSet *)indexes withEntrysFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary
 {
     NSUInteger index = [indexes firstIndex];
     int i = 0;
     while (index != NSNotFound) {
         if (i < orderedDictionary.count) {
-            [self replaceItemAtIndex:index withObject:[orderedDictionary objectAtIndex:i] pairedWithKey:[orderedDictionary keyAtIndex:i]];
+            [self replaceEntryAtIndex:index withObject:[orderedDictionary objectAtIndex:i] pairedWithKey:[orderedDictionary keyAtIndex:i]];
         }
         index = [indexes indexGreaterThanIndex:index];
     }
 }
 
-- (void)replaceItemsInRange:(NSRange)range withObjectsFromArray:(NSArray *)object pairedWithKeysFromArray:(NSArray *)key inRange:(NSRange)range2
+- (void)replaceEntrysInRange:(NSRange)range withObjectsFromArray:(NSArray *)object pairedWithKeysFromArray:(NSArray *)key inRange:(NSRange)range2
 {
-    [self replaceItemsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range] withObjects:[object objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range2]] pairedWithKeys:[key objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range2]]];
+    [self replaceEntrysAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range] withObjects:[object objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range2]] pairedWithKeys:[key objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range2]]];
 }
 
-- (void)replaceItemsInRange:(NSRange)range withItemsFrom:(NSArray *)orderedItems inRange:(NSRange)range2
+- (void)replaceEntrysInRange:(NSRange)range withEntrysFrom:(NSArray *)orderedEntrys inRange:(NSRange)range2
 {
-    [self replaceItemsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range] withItems:[orderedItems objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range2]]];
+    [self replaceEntrysAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range] withEntrys:[orderedEntrys objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range2]]];
 }
 
-- (void)replaceItemsInRange:(NSRange)range withItemsFromOrderedDictionary:(NSOrderedDictionary *)dictionary inRange:(NSRange)range2
+- (void)replaceEntrysInRange:(NSRange)range withEntrysFromOrderedDictionary:(NSOrderedDictionary *)dictionary inRange:(NSRange)range2
 {
-    [self replaceItemsInRange:range withObjectsFromArray:[dictionary.allObjects objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range2]] pairedWithKeysFromArray:[dictionary.allKeys objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range2]]];
+    [self replaceEntrysInRange:range withObjectsFromArray:[dictionary.allObjects objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range2]] pairedWithKeysFromArray:[dictionary.allKeys objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range2]]];
 }
 
-- (void)replaceItemsInRange:(NSRange)range withObjectsFromArray:(NSArray *)object pairedWithKeysFromArray:(NSArray *)key
+- (void)replaceEntrysInRange:(NSRange)range withObjectsFromArray:(NSArray *)object pairedWithKeysFromArray:(NSArray *)key
 {
-    [self replaceItemsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range] withObjects:object pairedWithKeys:key];
+    [self replaceEntrysAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range] withObjects:object pairedWithKeys:key];
 }
 
-- (void)replaceItemsInRange:(NSRange)range withItemsFrom:(NSArray *)orderedItems
+- (void)replaceEntrysInRange:(NSRange)range withEntrysFrom:(NSArray *)orderedEntrys
 {
-    [self replaceItemsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range] withItems:orderedItems];
+    [self replaceEntrysAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range] withEntrys:orderedEntrys];
 }
 
-- (void)replaceItemsInRange:(NSRange)range withItemsFromOrderedDictionary:(NSOrderedDictionary *)dictionary
+- (void)replaceEntrysInRange:(NSRange)range withEntrysFromOrderedDictionary:(NSOrderedDictionary *)dictionary
 {
-    [self replaceItemsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range] withItemsFromOrderedDictionary:dictionary];
+    [self replaceEntrysAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range] withEntrysFromOrderedDictionary:dictionary];
 }
 
-- (void)setItemsToObjects:(NSArray *)object pairedWithKeys:(NSArray *)key
+- (void)setEntrysToObjects:(NSArray *)object pairedWithKeys:(NSArray *)key
 {
     int i = 0;
     while (i < object.count && i < key.count) {
@@ -1087,7 +1087,7 @@
     }
 }
 
-- (void)setItemsToOrderedDictionary:(NSOrderedDictionary *)orderedDictionary
+- (void)setEntrysToOrderedDictionary:(NSOrderedDictionary *)orderedDictionary
 {
     for (id key in orderedDictionary.allKeys) {
         [self setObject:[orderedDictionary objectForKey:key] forKey:key];
@@ -1121,7 +1121,7 @@
 }
 //////////////////
 
-- (void)filterItemsUsingPredicateForObjects:(NSPredicate *)predicate
+- (void)filterEntrysUsingPredicateForObjects:(NSPredicate *)predicate
 {
     NSArray *tempObj = [objects filteredArrayUsingPredicate:predicate];
     NSArray *tempKey = [self keysForSortedObjects:tempObj];
@@ -1135,13 +1135,13 @@
 
 #pragma mark - Sorting
 
-- (void)exchangeItemAtIndex:(NSUInteger)idx1 withItemAtIndex:(NSUInteger)idx2
+- (void)exchangeEntryAtIndex:(NSUInteger)idx1 withEntryAtIndex:(NSUInteger)idx2
 {
     [keys exchangeObjectAtIndex:idx1 withObjectAtIndex:idx2];
     [objects exchangeObjectAtIndex:idx1 withObjectAtIndex:idx2];
 }
 
-- (void)sortItemsByObjectUsingDescriptors:(NSArray *)descriptors
+- (void)sortEntrysByObjectUsingDescriptors:(NSArray *)descriptors
 {
     NSArray *tempObj = [objects sortedArrayUsingDescriptors:descriptors];
     NSArray *tempKey = [self keysForSortedObjects:tempObj];
@@ -1149,7 +1149,7 @@
     objects = [tempObj mutableCopy];
 }
 
-- (void)sortItemsByKeysUsingDescriptors:(NSArray *)descriptors
+- (void)sortEntrysByKeysUsingDescriptors:(NSArray *)descriptors
 {
     NSArray *tempKey = [keys sortedArrayUsingDescriptors:descriptors];
     NSArray *tempObj = [self objectsForSortedKeys:tempKey];
@@ -1157,7 +1157,7 @@
     objects = [tempObj mutableCopy];
 }
 
-- (void)sortItemsByObjectUsingComparator:(NSComparator)cmptr
+- (void)sortEntrysByObjectUsingComparator:(NSComparator)cmptr
 {
     NSArray *tempObj = [objects sortedArrayUsingComparator:cmptr];
     NSArray *tempKey = [self keysForSortedObjects:tempObj];
@@ -1165,7 +1165,7 @@
     objects = [tempObj mutableCopy];
 }
 
-- (void)sortItemsByKeysUsingComparator:(NSComparator)cmptr
+- (void)sortEntrysByKeysUsingComparator:(NSComparator)cmptr
 {
     NSArray *tempKey = [keys sortedArrayUsingComparator:cmptr];
     NSArray *tempObj = [self objectsForSortedKeys:tempKey];
@@ -1173,7 +1173,7 @@
     objects = [tempObj mutableCopy];
 }
 
-- (void)sortItemsByObjectWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr
+- (void)sortEntrysByObjectWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr
 {
     NSArray *tempObj = [objects sortedArrayWithOptions:opts usingComparator:cmptr];
     NSArray *tempKey = [self keysForSortedObjects:tempObj];
@@ -1181,7 +1181,7 @@
     objects = [tempObj mutableCopy];
 }
 
-- (void)sortItemsByKeysWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr
+- (void)sortEntrysByKeysWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr
 {
     NSArray *tempKey = [keys sortedArrayWithOptions:opts usingComparator:cmptr];
     NSArray *tempObj = [self objectsForSortedKeys:tempKey];
@@ -1189,7 +1189,7 @@
     objects = [tempObj mutableCopy];
 }
 
-- (void)sortItemsByObjectUsingFunction:(NSInteger (*)(__strong id, __strong id, void *))compare context:(void *)context
+- (void)sortEntrysByObjectUsingFunction:(NSInteger (*)(__strong id, __strong id, void *))compare context:(void *)context
 {
     NSArray *tempObj = [objects sortedArrayUsingFunction:compare context:context];
     NSArray *tempKey = [self keysForSortedObjects:tempObj];
@@ -1197,7 +1197,7 @@
     objects = [tempObj mutableCopy];
 }
 
-- (void)sortItemsByKeysUsingFunction:(NSInteger (*)(__strong id, __strong id, void *))compare context:(void *)context
+- (void)sortEntrysByKeysUsingFunction:(NSInteger (*)(__strong id, __strong id, void *))compare context:(void *)context
 {
     NSArray *tempKey = [keys sortedArrayUsingFunction:compare context:context];
     NSArray *tempObj = [self objectsForSortedKeys:tempKey];
@@ -1205,7 +1205,7 @@
     objects = [tempObj mutableCopy];
 }
 
-- (void)sortItemsByObjectUsingSelector:(SEL)comparator
+- (void)sortEntrysByObjectUsingSelector:(SEL)comparator
 {
     NSArray *tempObj = [objects sortedArrayUsingSelector:comparator];
     NSArray *tempKey = [self keysForSortedObjects:tempObj];
@@ -1213,7 +1213,7 @@
     objects = [tempObj mutableCopy];
 }
 
-- (void)sortItemsByKeysUsingSelector:(SEL)comparator
+- (void)sortEntrysByKeysUsingSelector:(SEL)comparator
 {
     NSArray *tempKey = [keys sortedArrayUsingSelector:comparator];
     NSArray *tempObj = [self objectsForSortedKeys:tempKey];

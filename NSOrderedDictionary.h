@@ -16,12 +16,12 @@
 }
 /************ Terminology ************/
 /*
- Item - refers to an object-key pair.
+ Entry - refers to an object-key pair.
  Object - refers to (id), with an index, and an assocoated key.
  Key - refers to <(id)NSCopying>, with an associated object.
  
  Each method at the end of its corresponding description will indicate what object (NSArray, NSDictionary) which that method is drawn from, so it is easier to find a longer description of what the method does. 
-
+*/
 /************ Creating a NSOrderedDictionary ************/
 //Creates a new NSOrderedDictionary <NSArray> <NSDictionary>
 + (id)orderedDictionary;
@@ -31,60 +31,60 @@
 + (id)orderedDictionaryWithContentsOfFile:(NSString *)path;
 //Loads from URL <NSArray> <NSDictionary>
 + (id)orderedDictionaryWithContentsOfURL:(NSURL *)URL;
-//Create with single item <NSArray> <NSDictionary>
+//Create with single entry <NSArray> <NSDictionary>
 + (id)orderedDictionaryWithObject:(id)anObject pairedWithKey:(id<NSCopying>)aKey;
 //Create with a NSDictionary with multiple object-key pairs<NSArray> <NSDicitonary>
-+ (id)orderedDictionaryWithDictionary:(NSDictionary *)items;
++ (id)orderedDictionaryWithDictionary:(NSDictionary *)entrys;
 
 /************ Initializing an NSOrderedDictionary **************/
 //Initializes NSOrderedDictionary <NSArray> <NSDictionary>
 - (id)init;
-//Initializes with another orderedDictionary, placing in itself the items from the given orderedDictionary <NSArray> <NSDictionary>
+//Initializes with another orderedDictionary, placing in itself the entrys from the given orderedDictionary <NSArray> <NSDictionary>
 - (id)initWithOrderedDictionary:(NSOrderedDictionary *)orderedDictionary;
-//Initializes with another orderedDictionary, optionally placing in itself copied items from the given orderedDictionary <NSArray> <NSDictionary>
-- (id)initWithOrderedDictionary:(NSOrderedDictionary *)orderedDictionary copyItems:(BOOL)flag;
+//Initializes with another orderedDictionary, optionally placing in itself copied entrys from the given orderedDictionary <NSArray> <NSDictionary>
+- (id)initWithOrderedDictionary:(NSOrderedDictionary *)orderedDictionary copyEntrys:(BOOL)flag;
 //Initializes a newly allocated orderedDictionary with the contents of the file at the given path <NSArray> <NSDictionary>
 - (id)initWithContentsOfFile:(NSString *)path;
 //Initializes with the contents of the given URL <NSArray> <NSDictionary>
 - (id)initWithContentsOfURL:(NSURL *)URL;
 //Initalizes with the contents of an NSDictionary
-- (id)initWithContentsOfDictionary:(NSDictionary *)items;
+- (id)initWithContentsOfDictionary:(NSDictionary *)entrys;
 //Initalizes with the given ordered objects and keys <NSArray> <NSDictionary>
 - (id)initWithObjects:(NSArray *)orderedObjects pairedWithKeys:(NSArray *)orderedKeys;
 
 /************ Querying an NSOrderedDictionary ************/
 //Returns YES if orderedDictionary contains the given object <NSArray>
 - (BOOL)containsObject:(id)object;
-//Returns YES if the orderedDictionary conains the given item <NSArray>
+//Returns YES if the orderedDictionary conains the given entry <NSArray>
 - (BOOL)containsObject:(id)object pairedWithKey:(id<NSCopying>)key;
-//same as above, but the item is a NSDictionary with a single object-key pair <NSArray>
-- (BOOL)containsItem:(NSDictionary *)item;
+//same as above, but the entry is a NSDictionary with a single object-key pair <NSArray>
+- (BOOL)containsEntry:(NSDictionary *)entry;
 
-//returns number of items in the orderedDictionary <NSArray> <NSDictionary>
+//returns number of entrys in the orderedDictionary <NSArray> <NSDictionary>
 - (NSUInteger)count;
 
 //Returns the object with the highest index value <NSArray>
 - (id)lastObject;
 //Returns the key with the highest index value <NSArray>
 - (id<NSCopying>)lastKey;
-//Returns the item with the highest index value <NSArray>
-- (NSDictionary *)lastItem;
+//Returns the entry with the highest index value <NSArray>
+- (NSDictionary *)lastEntry;
 
 //Returns the object located at index <NSArray>
 - (id)objectAtIndex:(NSUInteger)index;
 //Returns the key located at index <NSArray>
 - (id<NSCopying>)keyAtIndex:(NSUInteger)index;
-//returns the item located at index <NSArray>
-- (NSDictionary *)itemAtIndex:(NSUInteger)index;
+//returns the entry located at index <NSArray>
+- (NSDictionary *)entryAtIndex:(NSUInteger)index;
 
 //Returns an array with objects at the given index set <NSArray>
 - (NSArray *)objectsAtIndexes:(NSIndexSet *)indexes;
 //Returns an array with keys at the given index set <NSArray>
 - (NSArray *)keysAtIndexes:(NSIndexSet *)indexes;
 //Returns an orderedDictionary with objects and keys at the given index set <NSArray>
-- (NSOrderedDictionary *)itemsAtIndexes:(NSIndexSet *)indexes;
-//Returns an unordered NSDictionary with the items at the given index set <NSArray>
-- (NSDictionary *)unorderedItemsAtIndexes:(NSIndexSet *)indexes;
+- (NSOrderedDictionary *)entrysAtIndexes:(NSIndexSet *)indexes;
+//Returns an unordered NSDictionary with the entrys at the given index set <NSArray>
+- (NSDictionary *)unorderedEntrysAtIndexes:(NSIndexSet *)indexes;
 
 //Returns an ordered array of all keys in the ordered dictionary <NSDictionary>
 - (NSArray *)allKeys;
@@ -102,35 +102,35 @@
 - (NSEnumerator *)objectEnumerator;
 //returns an enumerator that lets you access each key in the ordered dictionary <NSArray> <NSDictionary>
 - (NSEnumerator *)keyEnumerator;
-//returns an enumerator that lets you access each item in the ordered dictionary <NSArray> <NSDictionary>
+//returns an enumerator that lets you access each entry in the ordered dictionary <NSArray> <NSDictionary>
 //enumerator goes through an ordered array of dictionarys with one key-value pair.
-- (NSEnumerator *)itemEnumerator;
+- (NSEnumerator *)entryEnumerator;
 //returns an enumerator that lets you acces each object in the ordered dictionary in reverse <NSArray>
 - (NSEnumerator *)reverseObjectEnumerator;
 //returns an enumerator that lets you access each key in the ordered dictionary in reverse <NSArray>
 - (NSEnumerator *)reverseKeyEnumerator;
-//returns an enumerator that lets you access each item in the ordered dictionary in reverse <NSArray>
+//returns an enumerator that lets you access each entry in the ordered dictionary in reverse <NSArray>
 //enumerator goes through an ordered array of dictionarys with one key-value pair.
-- (NSEnumerator *)reverseItemEnumerator;
+- (NSEnumerator *)reverseEntryEnumerator;
 
-/************ Finding Items in the NSOrderedDictionary ************/
+/************ Finding Entrys in the NSOrderedDictionary ************/
 //Returns the lowest index whose object is equal to the given object <NSArray>
 - (NSUInteger)indexOfObject:(id)object;
 //Returns the lowest index whose key is equal to the given key <NSArray>
 - (NSUInteger)indexOfKey:(id<NSCopying>)key;
-//Returns the lowest index of the item where the object and key are equal to the given object and key <NSArray>
-- (NSUInteger)indexOfItemWithObject:(id)object pairedWithKey:(id<NSCopying>)key;
+//Returns the lowest index of the entry where the object and key are equal to the given object and key <NSArray>
+- (NSUInteger)indexOfEntryWithObject:(id)object pairedWithKey:(id<NSCopying>)key;
 //Same as above, but the object and key are a single object and key NSDictionary <NSArray>
-- (NSUInteger)indexOfItem:(NSDictionary *)item;
+- (NSUInteger)indexOfEntry:(NSDictionary *)entry;
 
 //Returns the lowest index whose object is equal to the given object in the specified range <NSArray>
 - (NSUInteger)indexOfObject:(id)object inRange:(NSRange)range;
 //Returns the lowest index whose key is equal to the given key in the specified range <NSArray>
 - (NSUInteger)indexOfKey:(id<NSCopying>)key inRange:(NSRange)range;
-//Returns the lowest index of the item where the object and key are equal to the given object and key in the specified range <NSArray>
-- (NSUInteger)indexOfItemWithObject:(id)object pairedWithKey:(id<NSCopying>)key inRange:(NSRange)range;
+//Returns the lowest index of the entry where the object and key are equal to the given object and key in the specified range <NSArray>
+- (NSUInteger)indexOfEntryWithObject:(id)object pairedWithKey:(id<NSCopying>)key inRange:(NSRange)range;
 //Same as above, but the object and key are a single object and key NSDictionary in the specified range <NSArray>
-- (NSUInteger)indexOfItem:(NSDictionary *)item inRange:(NSRange)range;
+- (NSUInteger)indexOfEntry:(NSDictionary *)entry inRange:(NSRange)range;
 
 //Returns the lowest index whose corresponding object value is identical to a given object. (If their memory addresses are the same) <NSArray>
 - (NSUInteger)indexOfObjectIdenticalTo:(id)object;
@@ -189,22 +189,22 @@
 - (id)firstObjectInCommonWithOrderedDictionary:(NSOrderedDictionary *)otherOrderedDictionary;
 //Returns the first key contained in the receiving orderedDictionary that’s equal to an key in another given array. <NSArray>
 - (id)firstKeyInCommonWithOrderedDictionary:(NSOrderedDictionary *)otherOrderedDictionary;
-//Returns the first Item contained in the receiving orderedDictionary that’s equal to an Item in another given array. <NSArray>
-- (id)firstItemInCommonWithOrderedDictionary:(NSOrderedDictionary *)otherOrderedDictionary;
+//Returns the first Entry contained in the receiving orderedDictionary that’s equal to an Entry in another given array. <NSArray>
+- (id)firstEntryInCommonWithOrderedDictionary:(NSOrderedDictionary *)otherOrderedDictionary;
 
 //Two orderedDictionarys have equal contents if they each hold the same number of objects and objects and keys at a given index in each array satisfy the isEqual: test. <NSArray>
 - (BOOL)isEqualToOrderedDictionary:(NSOrderedDictionary *)otherOrderedDictionary;
 
 /************ Deriving New NSOrderedDictionarys ************/
-//Duplicate and add an item <NSArray>
+//Duplicate and add an entry <NSArray>
 - (NSOrderedDictionary *)orderedDictionaryByAddingObject:(id)object pairedWithKey:(id<NSCopying>)aKey;
-//Duplicate and add an item <NSArray>
-- (NSOrderedDictionary *)orderedDictionaryByAddingItem:(NSDictionary *)item;
+//Duplicate and add an entry <NSArray>
+- (NSOrderedDictionary *)orderedDictionaryByAddingEntry:(NSDictionary *)entry;
 //Duplicate and add objects <NSArray>
 - (NSOrderedDictionary *)orderedDictionaryByAddingObjects:(NSArray *)orderedObjects pairedWithKeys:(NSArray *)orderedKeys;
 
 //Evaluates a given predicate against each object in the receiving orderedDictionary and returns a new orderedDictionary containing the objects for which the predicate returns true. <NSArray>
-- (NSOrderedDictionary *)filteredOrderDictionarysUsingPredicate:(NSPredicate *)predicate;
+- (NSOrderedDictionary *)filteredOrderDictionarysUsingPredicateForObjects:(NSPredicate *)predicate;
 //Returns a new orderedDictionary containing the receiving orderedDictionary's elements that fall within the limits specified by a given range. <NSArray>
 - (NSOrderedDictionary *)subOrderedDictionaryWithRange:(NSRange)range;
 
@@ -265,7 +265,7 @@
 - (void)removeObserver:(NSObject *)anObserver fromObjectsAtIndexes:(NSIndexSet *)indexes forKeyPath:(NSString *)keyPath;
 //Removes an observer to receive key value observer notifications for the specified key-path relative to the objects at the first key value. <NSDictionary>
 - (void)removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath context:(void *)context;
-//Invokes setValue:forKey: on each of the orderedDictionary's items using the specified value and key. <NSArray>
+//Invokes setValue:forKey: on each of the orderedDictionary's entrys using the specified value and key. <NSArray>
 - (void)setValue:(id)value forKey:(NSString *)key;
 //Sets a value to the object whos key is the first key in the key path
 - (void)setValue:(id)value forKeyPath:(NSString *)keyPath;
@@ -275,7 +275,7 @@
 - (id)valueForKeyPath:(NSString *)keyPath;
 
 /************ NSCoding ************/
-- (void)encodeWithEncoder:(NSCoder *)encoder;
+- (void)encodeWithCoder:(NSCoder *)aCoder;
 - (id)initWithCoder:(NSCoder *)decoder;
 
 /************ NSCopying *************/
@@ -298,99 +298,99 @@
 @interface NSMutableOrderedDictionary : NSOrderedDictionary
 
 /************ Creating and initalizing ************/
-+ (id)orderedDictionaryWithCapacity:(NSUInteger)numItems;
-- (id)initWithCapacity:(NSUInteger)numItems;
++ (id)orderedDictionaryWithCapacity:(NSUInteger)numEntrys;
+- (id)initWithCapacity:(NSUInteger)numEntrys;
 
 /************ Adding objects ************/
-//add* will add the item at the end of the orderedDictionary. If the key exists, its item will be deleted, before the item is added
+//add* will add the entry at the end of the orderedDictionary. If the key exists, its entry will be deleted, before the entry is added
 - (void)addObject:(id)object pairedWithKey:(id<NSCopying>)key;
-- (void)addItem:(NSDictionary *)item;
+- (void)addEntry:(NSDictionary *)entry;
 - (void)addEntriesFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary;
 - (void)addEntriesFromDictionary:(NSDictionary *)dictionary;
 
-//insert* will insert the item at the specific index. If the key exists, its item will be deleted, before the item is inserted; also, the insertion compensates for the deleted key, so the item will end up between the same to indexes regardless if a key is deleted or not.
+//insert* will insert the entry at the specific index. If the key exists, its entry will be deleted, before the entry is inserted; also, the insertion compensates for the deleted key, so the entry will end up between the same to indexes regardless if a key is deleted or not.
 - (void)insertObject:(id)object pairedWithKey:(id<NSCopying>)key atIndex:(NSUInteger)index;
-- (void)insertItem:(NSDictionary *)item atIndex:(NSUInteger)index;
-- (void)insertItemsFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary atIndex:(NSUInteger)index;
-- (void)insertItemsFromDictionary:(NSDictionary *)dictionary atIndex:(NSUInteger)index;
+- (void)insertEntry:(NSDictionary *)entry atIndex:(NSUInteger)index;
+- (void)insertEntrysFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary atIndex:(NSUInteger)index;
+- (void)insertEntrysFromDictionary:(NSDictionary *)dictionary atIndex:(NSUInteger)index;
 
-//set* methods will, if a key exists will overrite the object for said key, not changing the order of keys. if the key does not exist, it will append the item at the end of the ordered dictionary
+//set* methods will, if a key exists will overrite the object for said key, not changing the order of keys. if the key does not exist, it will append the entry at the end of the ordered dictionary
 - (void)setObject:(id)object forKey:(id<NSCopying>)aKey;
-- (void)setItem:(NSDictionary *)item;
+- (void)setEntry:(NSDictionary *)entry;
 - (void)setEntriesFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary;
 - (void)setEntriesFromDictionary:(NSDictionary *)dictionary;
 
-//set* atIndex methods will, if a key exists will overrite the object for said key, not changing the order of keys. if the key does not exist, the item will be inserted at the specified index.
+//set* atIndex methods will, if a key exists will overrite the object for said key, not changing the order of keys. if the key does not exist, the entry will be inserted at the specified index.
 - (void)setObject:(id)object forKey:(id<NSCopying>)aKey atIndex:(NSUInteger)index;
-- (void)setItem:(NSDictionary *)item  atIndex:(NSUInteger)index;
+- (void)setEntry:(NSDictionary *)entry  atIndex:(NSUInteger)index;
 - (void)setEntriesFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary atIndex:(NSUInteger)index;
 - (void)setEntriesFromDictionary:(NSDictionary *)dictionary  atIndex:(NSUInteger)index;
 
 
 
 /************ Removing objects ************/
-- (void)removeAllItems;
-- (void)removeLastItem;
+- (void)removeAllEntrys;
+- (void)removeLastEntry;
 
-- (void)removeItemWithObject:(id)object;
-- (void)removeItemWithKey:(id<NSCopying>)key;
-- (void)removeItemWithObject:(id)object pairedWithKey:(id<NSCopying>)key;
-- (void)removeItem:(NSDictionary *)item;
+- (void)removeEntryWithObject:(id)object;
+- (void)removeEntryWithKey:(id<NSCopying>)key;
+- (void)removeEntryWithObject:(id)object pairedWithKey:(id<NSCopying>)key;
+- (void)removeEntry:(NSDictionary *)entry;
 
-- (void)removeItemWithObject:(id)object inRange:(NSRange)range;
-- (void)removeItemWithKey:(id<NSCopying>)key inRange:(NSRange)range;
-- (void)removeItemWithObject:(id)object pairedWithKey:(id<NSCopying>)key inRange:(NSRange)ramge;
-- (void)removeItem:(NSDictionary *)item inRange:(NSRange)range;
+- (void)removeEntryWithObject:(id)object inRange:(NSRange)range;
+- (void)removeEntryWithKey:(id<NSCopying>)key inRange:(NSRange)range;
+- (void)removeEntryWithObject:(id)object pairedWithKey:(id<NSCopying>)key inRange:(NSRange)ramge;
+- (void)removeEntry:(NSDictionary *)entry inRange:(NSRange)range;
 
-- (void)removeItemAtIndex:(NSUInteger)index;
-- (void)removeItemsAtIndexes:(NSIndexSet *)indexes;
+- (void)removeEntryAtIndex:(NSUInteger)index;
+- (void)removeEntrysAtIndexes:(NSIndexSet *)indexes;
 
-- (void)removeItemWithObjectIdenticalTo:(id)anObject;
-- (void)removeItemWithObjectIdenticalTo:(id)anObject inRange:(NSRange)range;
+- (void)removeEntryWithObjectIdenticalTo:(id)anObject;
+- (void)removeEntryWithObjectIdenticalTo:(id)anObject inRange:(NSRange)range;
 
-- (void)removeItemsWithObjectsInArray:(NSArray *)array;
-- (void)removeItemsWithKeysInArray:(NSArray *)array;
+- (void)removeEntrysWithObjectsInArray:(NSArray *)array;
+- (void)removeEntrysWithKeysInArray:(NSArray *)array;
 
-- (void)removeItemsInRange:(NSRange)range;
+- (void)removeEntrysInRange:(NSRange)range;
 
 /************ Replacing objects ************/
-- (void)replaceItemAtIndex:(NSInteger)index withObject:(id)object pairedWithKey:(id<NSCopying>)key;
-- (void)replaceItemAtIndex:(NSUInteger)index withItem:(NSDictionary *)item;
+- (void)replaceEntryAtIndex:(NSInteger)index withObject:(id)object pairedWithKey:(id<NSCopying>)key;
+- (void)replaceEntryAtIndex:(NSUInteger)index withEntry:(NSDictionary *)entry;
 
-- (void)replaceItemsAtIndexes:(NSIndexSet *)indexes withObjects:(NSArray *)objects pairedWithKeys:(NSArray *)keys;
-- (void)replaceItemsAtIndexes:(NSIndexSet *)indexes withItems:(NSArray *)orderedItems;//orderedItems is an ordered array with NSDictionarys with a single object-key pair as items.
-- (void)replaceItemsAtIndexes:(NSIndexSet *)indexes withItemsFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary;
+- (void)replaceEntrysAtIndexes:(NSIndexSet *)indexes withObjects:(NSArray *)objects pairedWithKeys:(NSArray *)keys;
+- (void)replaceEntrysAtIndexes:(NSIndexSet *)indexes withEntrys:(NSArray *)orderedEntrys;//orderedEntrys is an ordered array with NSDictionarys with a single object-key pair as entrys.
+- (void)replaceEntrysAtIndexes:(NSIndexSet *)indexes withEntrysFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary;
 
-- (void)replaceItemsInRange:(NSRange)range withObjectsFromArray:(NSArray *)objects pairedWithKeysFromArray:(NSArray *)keys inRange:(NSRange)range2;
-- (void)replaceItemsInRange:(NSRange)range withItemsFrom:(NSArray *)orderedItems inRange:(NSRange)range2;//orderedItems is an ordered array with NSDictionarys with a single object-key pair as items.
-- (void)replaceItemsInRange:(NSRange)range withItemsFromOrderedDictionary:(NSOrderedDictionary *)dictionary inRange:(NSRange)range2;
+- (void)replaceEntrysInRange:(NSRange)range withObjectsFromArray:(NSArray *)objects pairedWithKeysFromArray:(NSArray *)keys inRange:(NSRange)range2;
+- (void)replaceEntrysInRange:(NSRange)range withEntrysFrom:(NSArray *)orderedEntrys inRange:(NSRange)range2;//orderedEntrys is an ordered array with NSDictionarys with a single object-key pair as entrys.
+- (void)replaceEntrysInRange:(NSRange)range withEntrysFromOrderedDictionary:(NSOrderedDictionary *)dictionary inRange:(NSRange)range2;
 
-- (void)replaceItemsInRange:(NSRange)range withObjectsFromArray:(NSArray *)objects pairedWithKeysFromArray:(NSArray *)keys;
-- (void)replaceItemsInRange:(NSRange)range withItemsFrom:(NSArray *)orderedItems;//orderedItems is an ordered array with NSDictionarys with a single object-key pair as items.
-- (void)replaceItemsInRange:(NSRange)range withItemsFromOrderedDictionary:(NSOrderedDictionary *)dictionary;
+- (void)replaceEntrysInRange:(NSRange)range withObjectsFromArray:(NSArray *)objects pairedWithKeysFromArray:(NSArray *)keys;
+- (void)replaceEntrysInRange:(NSRange)range withEntrysFrom:(NSArray *)orderedEntrys;//orderedEntrys is an ordered array with NSDictionarys with a single object-key pair as entrys.
+- (void)replaceEntrysInRange:(NSRange)range withEntrysFromOrderedDictionary:(NSOrderedDictionary *)dictionary;
 
-- (void)setItemsToObjects:(NSArray *)objects pairedWithKeys:(NSArray *)keys;
-- (void)setItemsToOrderedDictionary:(NSOrderedDictionary *)orderedDictionary;
+- (void)setEntrysToObjects:(NSArray *)objects pairedWithKeys:(NSArray *)keys;
+- (void)setEntrysToOrderedDictionary:(NSOrderedDictionary *)orderedDictionary;
 
 /************ Filtering Content ************/
-- (void)filterItemsUsingPredicateForObjects:(NSPredicate *)predicate;
+- (void)filterEntrysUsingPredicateForObjects:(NSPredicate *)predicate;
 
 /************ Rearranging content ************/
-- (void)exchangeItemAtIndex:(NSUInteger)idx1 withItemAtIndex:(NSUInteger)idx2;
+- (void)exchangeEntryAtIndex:(NSUInteger)idx1 withEntryAtIndex:(NSUInteger)idx2;
 
-- (void)sortItemsByObjectUsingDescriptors:(NSArray *)descriptors;
-- (void)sortItemsByKeysUsingDescriptors:(NSArray *)descriptors;
+- (void)sortEntrysByObjectUsingDescriptors:(NSArray *)descriptors;
+- (void)sortEntrysByKeysUsingDescriptors:(NSArray *)descriptors;
 
-- (void)sortItemsByObjectUsingComparator:(NSComparator)cmptr;
-- (void)sortItemsByKeysUsingComparator:(NSComparator)cmptr;
+- (void)sortEntrysByObjectUsingComparator:(NSComparator)cmptr;
+- (void)sortEntrysByKeysUsingComparator:(NSComparator)cmptr;
 
-- (void)sortItemsByObjectWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr;
-- (void)sortItemsByKeysWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr;
+- (void)sortEntrysByObjectWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr;
+- (void)sortEntrysByKeysWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr;
 
-- (void)sortItemsByObjectUsingFunction:(NSInteger (*)(id, id, void *))compare context:(void *)context;
-- (void)sortItemsByKeysUsingFunction:(NSInteger (*)(id, id, void *))compare context:(void *)context;
+- (void)sortEntrysByObjectUsingFunction:(NSInteger (*)(id, id, void *))compare context:(void *)context;
+- (void)sortEntrysByKeysUsingFunction:(NSInteger (*)(id, id, void *))compare context:(void *)context;
 
-- (void)sortItemsByObjectUsingSelector:(SEL)comparator;
-- (void)sortItemsByKeysUsingSelector:(SEL)comparator;
+- (void)sortEntrysByObjectUsingSelector:(SEL)comparator;
+- (void)sortEntrysByKeysUsingSelector:(SEL)comparator;
 
 @end
