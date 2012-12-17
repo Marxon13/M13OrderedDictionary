@@ -37,3 +37,7 @@ There are three main terms used throughout the methods:
 Limitations:
 ------------
 The objects and keys are subject to the requirements and limitations of NSArray and NSDictionary; As the objects and keys are stored in a NSArray, as well as an NSDictionary. Mainly, nil cannot be passed as an object or a key since you cannot store nil in a NSArray. So, removing an object needs to be doe with the NSArray method <code>remove*:</code> instead of the NSDictionary method <code>setValue:nil forKey:someKey</code>
+
+Notes:
+----------
+If something is not working, or does not work as expected when compared to Apples's docs. let me know, I'll get it fixed ASAP.
