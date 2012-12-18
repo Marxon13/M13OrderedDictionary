@@ -290,6 +290,12 @@
 /************ NSFastEnumeration ************/
 //Cannot figure out how to implement this, in this way without incuring excessive overhead by creating the array of dictionarys each time. Not sure where to put code to create array on the first run, and delete on the last run.
 //- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id *)stackbuf count:(NSUInteger)len; //Will only produce NSDictionarys with single object-key pairs. If you need to iterate over only the objects and keys, use "allKeys" and "allObjects".
+
+/************ Indexed Subscripts ************/
+//These only retreive objects, not keys
+- (id)objectAtIndexedSubscript:(NSUInteger)index;
+- (id)objectForKeyedSubscript:(id)key;
+
 @end
 
 /*********************************************************************************
@@ -395,5 +401,8 @@
 
 - (void)sortEntrysByObjectUsingSelector:(SEL)comparator;
 - (void)sortEntrysByKeysUsingSelector:(SEL)comparator;
+
+/************ Indexed Subscripts ************/
+- (void)setObject:(id)object forKeyedSubscript:(id<NSCopying>)key;
 
 @end

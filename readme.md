@@ -23,6 +23,7 @@ Features:
     * Descriptions / Storing
     * Key Value Observing
     * Key Value Coding
+    * Indexed Subscripting
 
 Usage:
 -------
@@ -37,6 +38,8 @@ There are three main terms used throughout the methods:
 Limitations:
 ------------
 The objects and keys are subject to the requirements and limitations of NSArray and NSDictionary; As the objects and keys are stored in a NSArray, as well as an NSDictionary. Mainly, nil cannot be passed as an object or a key since you cannot store nil in a NSArray. So, removing an object needs to be doe with the NSArray method <code>remove*:</code> instead of the NSDictionary method <code>setValue:nil forKey:someKey</code>
+
+Index subscripting will only retrieve an object at an index, retrieve an object for a key, and set an object for a key.
 
 Notes:
 ----------

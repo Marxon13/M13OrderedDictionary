@@ -747,6 +747,18 @@
     return 
 }
  */
+
+#pragma mark - Indexed Subscripts
+- (id)objectAtIndexedSubscript:(NSUInteger)index
+{
+    return [objects objectAtIndex:index];
+}
+
+- (id)objectForKeyedSubscript:(id)key
+{
+    return [pairs objectForKey:key];
+}
+
 @end
 
 /*********************************************************************************
@@ -1222,6 +1234,13 @@
     NSArray *tempObj = [self objectsForSortedKeys:tempKey];
     keys = [tempKey mutableCopy];
     objects = [tempObj mutableCopy];
+}
+
+#pragma mark - Indexed Subscripts
+
+- (void)setObject:(id)obj forKeyedSubscript:(id<NSCopying>)key
+{
+    [self setObject:obj forKey:key];
 }
 
 @end
