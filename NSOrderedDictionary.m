@@ -103,7 +103,7 @@
 - (id)initWithObjects:(NSArray *)orderedObjects pairedWithKeys:(NSArray *)orderedKeys
 {
     NSAssert(orderedObjects.count == orderedKeys.count, @"The amount of objects does not match the number of keys");
-    NSAssert([[NSSet setWithArray:orderedKeys] count] == orderedKeys.count, "There are duplicate keys on initialization");
+    NSAssert([[NSSet setWithArray:orderedKeys] count] == orderedKeys.count, @"There are duplicate keys on initialization");
     self = [super init];
     if (self != nil) {
         keys = [[NSMutableArray alloc] initWithArray:orderedKeys];
@@ -635,20 +635,92 @@
 
 - (NSString *)description
 {
-    NSDictionary *dict = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
-    return [dict description];
+    NSMutableString *string = [[NSMutableString alloc] init];
+    [string appendString:@"{\n"];
+    for (int i = 0; i < self.count; i++) {
+        id key = [keys objectAtIndex:i];
+        id object = [objects objectAtIndex:i];
+        NSString *keyDes = @"";
+        NSString *objDes = @"";
+        if ([key respondsToSelector:@selector(description)]) {
+            keyDes = [key description];
+        } else {
+            keyDes = nil;
+        }
+        if ([object respondsToSelector:@selector(description)]) {
+            objDes = [object description];
+        } else {
+            objDes = nil;
+        }
+        
+        [string appendFormat:@"%@ = %@,\n", keyDes, objDes];
+    }
+    [string appendString:@"\n}"];
+    return string;
 }
 
 - (NSString *)descriptionWithLocale:(id)locale
 {
-    NSDictionary *dict = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
-    return [dict descriptionWithLocale:locale];
+    NSMutableString *string = [[NSMutableString alloc] init];
+    [string appendString:@"{\n"];
+    for (int i = 0; i < self.count; i++) {
+        id key = [keys objectAtIndex:i];
+        id object = [objects objectAtIndex:i];
+        NSString *keyDes = @"";
+        NSString *objDes = @"";
+        if ([key respondsToSelector:@selector(descriptionWithLocale:)]) {
+            keyDes = [key descriptionWithLocale:locale];
+        } else if ([key respondsToSelector:@selector(description)]) {
+            keyDes = [key description];
+        } else {
+            keyDes = nil;
+        }
+        if ([object respondsToSelector:@selector(descriptionWithLocale:)]) {
+            objDes = [object descriptionWithLocale:locale];
+        } else if ([object respondsToSelector:@selector(description)]) {
+            objDes = [object description];
+        } else {
+            objDes = nil;
+        }
+        
+        [string appendFormat:@"%@ = %@,\n", keyDes, objDes];
+    }
+    [string appendString:@"\n}"];
+    return string;
 }
 
 - (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level
 {
-    NSDictionary *dict = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
-    return [dict descriptionWithLocale:locale indent:level];
+    NSMutableString *string = [[NSMutableString alloc] init];
+    [string appendString:@"{\n"];
+    for (int i = 0; i < self.count; i++) {
+        id key = [keys objectAtIndex:i];
+        id object = [objects objectAtIndex:i];
+        NSString *keyDes = @"";
+        NSString *objDes = @"";
+        if ([key respondsToSelector:@selector(descriptionWithLocale:indent:)]) {
+            keyDes = [key descriptionWithLocale:locale indent:level];
+        } else if ([key respondsToSelector:@selector(descriptionWithLocale:)]) {
+            keyDes = [key descriptionWithLocale:locale];
+        } else if ([key respondsToSelector:@selector(description)]) {
+            keyDes = [key description];
+        } else {
+            keyDes = nil;
+        }
+        if ([object respondsToSelector:@selector(descriptionWithLocale:indent:)]) {
+            objDes = [object descriptionWithLocale:locale indent:level];
+        } else if ([object respondsToSelector:@selector(descriptionWithLocale:)]) {
+            objDes = [object descriptionWithLocale:locale];
+        } else if ([object respondsToSelector:@selector(description)]) {
+            objDes = [object description];
+        } else {
+            objDes = nil;
+        }
+        
+        [string appendFormat:@"%@ = %@,\n", keyDes, objDes];
+    }
+    [string appendString:@"\n}"];
+    return string;
 }
 
 - (BOOL)writeToFile:(NSString *)path atomically:(BOOL)flag
@@ -855,7 +927,7 @@
         [pairs setObject:object forKey:aKey];
         [objects replaceObjectAtIndex:[self indexOfKey:aKey] withObject:object];
     } else {
-        [self addObject:object pairedWithKey:keys];
+        [self addObject:object pairedWithKey:aKey];
     }
 }
 
