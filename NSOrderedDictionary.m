@@ -160,7 +160,7 @@
 
 - (id<NSCopying>)keyAtIndex:(NSUInteger)index
 {
-    return [keys lastObject];
+    return [keys objectAtIndex:index];
 }
 
 - (NSDictionary *)entryAtIndex:(NSUInteger)index
