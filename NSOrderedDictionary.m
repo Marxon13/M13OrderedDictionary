@@ -774,7 +774,7 @@
 
 - (id)valueForKeyPath:(NSString *)keyPath
 {
-    [pairs valueForKeyPath:keyPath];
+    return [pairs valueForKeyPath:keyPath];
 }
 
 #pragma mark - NSCoding
