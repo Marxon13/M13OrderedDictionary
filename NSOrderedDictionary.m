@@ -1040,7 +1040,7 @@
     id key = [keys objectAtIndex:index];
     [keys removeObjectAtIndex:index];
     [objects removeObjectAtIndex:index];
-    [pairs setObject:nil forKey:key];
+    [pairs removeObjectForKey:key];
 }
 
 - (void)removeEntrysAtIndexes:(NSIndexSet *)indexes
