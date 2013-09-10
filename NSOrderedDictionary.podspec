@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 
 
 
-  s.source       = { :git => "https://github.com/Marxon13/NSOrderedDictionary.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/zakdances/NSOrderedDictionary.git", :tag => "v#{s.version}" }
 
 
  
