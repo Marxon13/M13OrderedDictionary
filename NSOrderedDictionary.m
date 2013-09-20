@@ -87,7 +87,7 @@
 
 - (id)initWithContentsOfDictionary:(NSDictionary *)entrys
 {
-    return [self init];
+    self = [super init];
     if (self != nil) {
         keys = [[NSMutableArray alloc] initWithArray:entrys.allKeys];
         objects = [[NSMutableArray alloc] init];
