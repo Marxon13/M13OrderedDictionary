@@ -848,12 +848,11 @@
 
 #pragma mark - NSFastEnumeration
 
-/*
- - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__autoreleasing id *)stackbuf count:(NSUInteger)len
+
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)len
 {
-    return 
+    return [keys countByEnumeratingWithState:state objects:buffer count:len];
 }
- */
 
 #pragma mark - Indexed Subscripts
 - (id)objectAtIndexedSubscript:(NSUInteger)index
