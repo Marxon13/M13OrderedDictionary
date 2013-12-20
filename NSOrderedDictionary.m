@@ -1017,6 +1017,21 @@
 
 #pragma mark - Removing
 
+- (void)removeObjectForKey:(id)key
+{
+    [self removeEntryWithKey:key];
+}
+
+- (void)removeObjectsForKeys:(NSArray *)arrayKeys
+{
+    [self removeEntrysWithKeysInArray:arrayKeys];
+}
+
+- (void)removeAllObjects
+{
+    [self removeAllEntrys];
+}
+
 - (void)removeAllEntrys
 {
     [keys removeAllObjects];

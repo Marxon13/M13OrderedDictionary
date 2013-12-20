@@ -338,6 +338,12 @@
 
 
 /************ Removing objects ************/
+
+//Vanilla NSMutableDictionary methods, for sanity
+- (void)removeObjectForKey:(id)key;
+- (void)removeObjectsForKeys:(NSArray *)keys;
+- (void)removeAllObjects;
+
 - (void)removeAllEntrys;
 - (void)removeLastEntry;
 
