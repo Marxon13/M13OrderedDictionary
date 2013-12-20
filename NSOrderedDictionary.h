@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSOrderedDictionary : NSObject <NSCopying, /*NSFastEnumeration,*/ NSCoding>
+@interface NSOrderedDictionary : NSObject <NSCopying, NSFastEnumeration, NSCoding>
 {
     NSMutableArray *keys;
     NSMutableArray *objects;
