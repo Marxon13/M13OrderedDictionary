@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSOrderedDictionary : NSObject <NSCopying, /*NSFastEnumeration,*/ NSCoding>
+@interface NSOrderedDictionary : NSObject <NSCopying, NSFastEnumeration, NSCoding>
 {
     NSMutableArray *keys;
     NSMutableArray *objects;
@@ -338,6 +338,12 @@
 
 
 /************ Removing objects ************/
+
+//Vanilla NSMutableDictionary methods, for sanity
+- (void)removeObjectForKey:(id)key;
+- (void)removeObjectsForKeys:(NSArray *)keys;
+- (void)removeAllObjects;
+
 - (void)removeAllEntrys;
 - (void)removeLastEntry;
 

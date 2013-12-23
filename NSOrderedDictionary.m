@@ -636,7 +636,7 @@
 - (NSString *)description
 {
     NSMutableString *string = [[NSMutableString alloc] init];
-    [string appendString:@"{\n"];
+    [string appendString:@"{"];
     for (int i = 0; i < self.count; i++) {
         id key = [keys objectAtIndex:i];
         id object = [objects objectAtIndex:i];
@@ -653,7 +653,12 @@
             objDes = nil;
         }
         
-        [string appendFormat:@"%@ = %@,\n", keyDes, objDes];
+        [string appendFormat:@"\n\t%@ = %@", keyDes, objDes];
+        
+        if (i < self.count - 1)
+        {
+            [string appendString:@";"];
+        }
     }
     [string appendString:@"\n}"];
     return string;
@@ -662,20 +667,28 @@
 - (NSString *)descriptionWithLocale:(id)locale
 {
     NSMutableString *string = [[NSMutableString alloc] init];
-    [string appendString:@"{\n"];
+    [string appendString:@"{"];
     for (int i = 0; i < self.count; i++) {
         id key = [keys objectAtIndex:i];
         id object = [objects objectAtIndex:i];
         NSString *keyDes = @"";
         NSString *objDes = @"";
-        if ([key respondsToSelector:@selector(descriptionWithLocale:)]) {
+        if ([key respondsToSelector:@selector(descriptionWithLocale:indent:)])
+        {
+            keyDes = [key descriptionWithLocale:locale indent:1];
+        }
+        else if ([key respondsToSelector:@selector(descriptionWithLocale:)]) {
             keyDes = [key descriptionWithLocale:locale];
         } else if ([key respondsToSelector:@selector(description)]) {
             keyDes = [key description];
         } else {
             keyDes = nil;
         }
-        if ([object respondsToSelector:@selector(descriptionWithLocale:)]) {
+        if ([object respondsToSelector:@selector(descriptionWithLocale:indent:)])
+        {
+            objDes = [object descriptionWithLocale:locale indent:1];
+        }
+        else if ([object respondsToSelector:@selector(descriptionWithLocale:)]) {
             objDes = [object descriptionWithLocale:locale];
         } else if ([object respondsToSelector:@selector(description)]) {
             objDes = [object description];
@@ -683,7 +696,13 @@
             objDes = nil;
         }
         
-        [string appendFormat:@"%@ = %@,\n", keyDes, objDes];
+        [string appendFormat:@"\n\t%@ = %@", keyDes, objDes];
+        
+        if (i < self.count - 1)
+        {
+            [string appendString:@";"];
+        }
+        
     }
     [string appendString:@"\n}"];
     return string;
@@ -692,14 +711,14 @@
 - (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level
 {
     NSMutableString *string = [[NSMutableString alloc] init];
-    [string appendString:@"{\n"];
+    [string appendString:@"    {"];
     for (int i = 0; i < self.count; i++) {
         id key = [keys objectAtIndex:i];
         id object = [objects objectAtIndex:i];
         NSString *keyDes = @"";
         NSString *objDes = @"";
         if ([key respondsToSelector:@selector(descriptionWithLocale:indent:)]) {
-            keyDes = [key descriptionWithLocale:locale indent:level];
+            keyDes = [key descriptionWithLocale:locale indent:level + 1];
         } else if ([key respondsToSelector:@selector(descriptionWithLocale:)]) {
             keyDes = [key descriptionWithLocale:locale];
         } else if ([key respondsToSelector:@selector(description)]) {
@@ -708,7 +727,7 @@
             keyDes = nil;
         }
         if ([object respondsToSelector:@selector(descriptionWithLocale:indent:)]) {
-            objDes = [object descriptionWithLocale:locale indent:level];
+            objDes = [object descriptionWithLocale:locale indent:level + 1];
         } else if ([object respondsToSelector:@selector(descriptionWithLocale:)]) {
             objDes = [object descriptionWithLocale:locale];
         } else if ([object respondsToSelector:@selector(description)]) {
@@ -717,9 +736,25 @@
             objDes = nil;
         }
         
-        [string appendFormat:@"%@ = %@,\n", keyDes, objDes];
+        for (int i = 0; i < level; i++)
+        {
+            [string appendString:@"\t"];
+        }
+        
+        [string appendFormat:@"\n%@ = %@", keyDes, objDes];
+        
+        if (i < self.count - 1)
+        {
+            [string appendString:@";"];
+        }
     }
-    [string appendString:@"\n}"];
+    
+    [string appendString:@"\n"];
+    for (int i = 0; i < level; i++)
+    {
+        [string appendString:@"\t"];
+    }
+    [string appendString:@"}"];
     return string;
 }
 
@@ -813,12 +848,11 @@
 
 #pragma mark - NSFastEnumeration
 
-/*
- - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__autoreleasing id *)stackbuf count:(NSUInteger)len
+
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)len
 {
-    return 
+    return [keys countByEnumeratingWithState:state objects:buffer count:len];
 }
- */
 
 #pragma mark - Indexed Subscripts
 - (id)objectAtIndexedSubscript:(NSUInteger)index
@@ -982,6 +1016,21 @@
 }
 
 #pragma mark - Removing
+
+- (void)removeObjectForKey:(id)key
+{
+    [self removeEntryWithKey:key];
+}
+
+- (void)removeObjectsForKeys:(NSArray *)arrayKeys
+{
+    [self removeEntrysWithKeysInArray:arrayKeys];
+}
+
+- (void)removeAllObjects
+{
+    [self removeAllEntrys];
+}
 
 - (void)removeAllEntrys
 {
