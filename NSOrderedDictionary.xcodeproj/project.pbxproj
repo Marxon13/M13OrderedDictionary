@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA0F92881896BC2A0034DCB3 /* NSOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0F92871896BC2A0034DCB3 /* NSOrderedDictionary.m */; };
 		CAC53486167D3EA900E66DFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC53485167D3EA900E66DFC /* UIKit.framework */; };
 		CAC53488167D3EA900E66DFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC53487167D3EA900E66DFC /* Foundation.framework */; };
 		CAC5348A167D3EA900E66DFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC53489167D3EA900E66DFC /* CoreGraphics.framework */; };
@@ -16,10 +17,11 @@
 		CAC53498167D3EA900E66DFC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC53497167D3EA900E66DFC /* Default.png */; };
 		CAC5349A167D3EA900E66DFC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC53499167D3EA900E66DFC /* Default@2x.png */; };
 		CAC5349C167D3EA900E66DFC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC5349B167D3EA900E66DFC /* Default-568h@2x.png */; };
-		CAC534A4167D3ECB00E66DFC /* NSOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC534A3167D3ECB00E66DFC /* NSOrderedDictionary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA0F92861896BC2A0034DCB3 /* NSOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOrderedDictionary.h; sourceTree = SOURCE_ROOT; };
+		CA0F92871896BC2A0034DCB3 /* NSOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOrderedDictionary.m; sourceTree = SOURCE_ROOT; };
 		CAC53481167D3EA900E66DFC /* NSOrderedDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSOrderedDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC53485167D3EA900E66DFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CAC53487167D3EA900E66DFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -33,8 +35,6 @@
 		CAC53497167D3EA900E66DFC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CAC53499167D3EA900E66DFC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CAC5349B167D3EA900E66DFC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		CAC534A2167D3ECB00E66DFC /* NSOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSOrderedDictionary.h; path = ../../NSOrderedDictionary.h; sourceTree = "<group>"; };
-		CAC534A3167D3ECB00E66DFC /* NSOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSOrderedDictionary.m; path = ../../NSOrderedDictionary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +83,8 @@
 			children = (
 				CAC53494167D3EA900E66DFC /* AppDelegate.h */,
 				CAC53495167D3EA900E66DFC /* AppDelegate.m */,
-				CAC534A2167D3ECB00E66DFC /* NSOrderedDictionary.h */,
-				CAC534A3167D3ECB00E66DFC /* NSOrderedDictionary.m */,
+				CA0F92861896BC2A0034DCB3 /* NSOrderedDictionary.h */,
+				CA0F92871896BC2A0034DCB3 /* NSOrderedDictionary.m */,
 				CAC5348C167D3EA900E66DFC /* Supporting Files */,
 			);
 			path = NSOrderedDictionary;
@@ -170,8 +170,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAC53492167D3EA900E66DFC /* main.m in Sources */,
+				CA0F92881896BC2A0034DCB3 /* NSOrderedDictionary.m in Sources */,
 				CAC53496167D3EA900E66DFC /* AppDelegate.m in Sources */,
-				CAC534A4167D3ECB00E66DFC /* NSOrderedDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

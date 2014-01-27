@@ -1,7 +1,9 @@
-NSOrderedDictionary / NSMutableOrderedDictionary
+<img src="https://raw.github.com/Marxon13/NSOrderedDictionary/master/ReadmeResources/NSOrderedDictionaryBanner.png">
+
+NSOrderedDictionary
 ============
 
-A cross between NSArray and NSDictionary. It holds an ordered list of objects and keys. All of which can be accessed by index, or key. This class is not a minimally finished class, with one or two methods. It follows Apple's subclassing protocols for NSArray and NSDictionary. It has methods comparable to all of NSArray's methods and all of NSDictionary's methods. It also supports NSCoding, NSCopying, KVO, and supports NSFastEnumeration over the objects or keys. It is the only fully implemented ordered dictionary class.
+NSOrderedDictionary is a cross between NSArray and NSDictionary. It holds an ordered list of objects and keys. All of which can be accessed by index, or key. This class is the only fully implemented ordered dictionary class for Objective C. It follows Apple's subclassing protocols for NSArray and NSDictionary. It has methods comparable to all of NSArray's methods and all of NSDictionary's methods. It also supports NSCoding, NSCopying, KVO, and supports NSFastEnumeration over the objects or keys.
 
 Features:
 ----------
