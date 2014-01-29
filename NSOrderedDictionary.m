@@ -59,10 +59,10 @@
 
 - (id)initWithOrderedDictionary:(NSOrderedDictionary *)orderedDictionary
 {
-    return [self initWithOrderedDictionary:orderedDictionary copyEntrys:NO];
+    return [self initWithOrderedDictionary:orderedDictionary copyEntries:NO];
 }
 
-- (id)initWithOrderedDictionary:(NSOrderedDictionary *)orderedDictionary copyEntrys:(BOOL)flag
+- (id)initWithOrderedDictionary:(NSOrderedDictionary *)orderedDictionary copyEntries:(BOOL)flag
 {
     self = [super init];
     if (self != nil) {
@@ -228,7 +228,7 @@
 - (NSEnumerator *)entryEnumerator
 {
     NSMutableArray *temp = [[NSMutableArray alloc] init];
-    for (int i = 0; i < keys.count; i++) {
+    for (NSUInteger i = 0; i < keys.count; i++) {
         [temp addObject:[self entryAtIndex:i]];
     }
     return [temp objectEnumerator];
@@ -247,8 +247,8 @@
 - (NSEnumerator *)reverseEntryEnumerator
 {
     NSMutableArray *temp = [[NSMutableArray alloc] init];
-    for (int i = keys.count - 1; i >= 0; i++) {
-        [temp addObject:[self entryAtIndex:i]];
+    for (NSUInteger i = 1; i <= keys.count; i--) {
+        [temp addObject:[self entryAtIndex:(keys.count - i)]];
     }
     return [temp objectEnumerator];
 }
@@ -273,8 +273,8 @@
     NSIndexSet *idx2 = [keys indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         return [obj isEqual:key];
     }];
-    NSInteger index = NSNotFound;
-    unsigned current_index = [idx1 firstIndex];
+    NSUInteger index = NSNotFound;
+    NSUInteger current_index = [idx1 firstIndex];
     while (current_index != NSNotFound && index == NSNotFound)
     {
         if ([idx2 containsIndex:current_index]) {
@@ -308,8 +308,8 @@
     NSIndexSet *idx2 = [[keys objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range]] indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         return [obj isEqual:key];
     }];
-    NSInteger index = NSNotFound;
-    unsigned current_index = [idx1 firstIndex];
+    NSUInteger index = NSNotFound;
+    NSUInteger current_index = [idx1 firstIndex];
     while (current_index != NSNotFound && index == NSNotFound)
     {
         if ([idx2 containsIndex:current_index]) {
@@ -948,7 +948,7 @@
 
 - (void)insertEntriesFromDictionary:(NSDictionary *)dictionary atIndex:(NSUInteger)index
 {
-    int i = index;
+    NSUInteger i = index;
     for (id key in dictionary.allKeys) {
         [self insertObject:[dictionary objectForKey:key] pairedWithKey:key atIndex:i];
         i++;
@@ -972,7 +972,7 @@
 
 - (void)setEntriesFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary
 {
-    for (int i = 0; i < orderedDictionary.count; i++) {
+    for (NSUInteger i = 0; i < orderedDictionary.count; i++) {
         [self setObject:[orderedDictionary objectAtIndex:i] forKey:[orderedDictionary keyAtIndex:i]];
     }
 }
@@ -1001,14 +1001,14 @@
 
 - (void)setEntriesFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary atIndex:(NSUInteger)index
 {
-    for (int i = 0; i < orderedDictionary.count; i++) {
+    for (NSUInteger i = 0; i < orderedDictionary.count; i++) {
         [self setObject:[orderedDictionary objectAtIndex:i] forKey:[orderedDictionary keyAtIndex:i] atIndex:(index + i)];
     }
 }
 
 - (void)setEntriesFromDictionary:(NSDictionary *)dictionary atIndex:(NSUInteger)index
 {
-    int i = index;
+    NSUInteger i = index;
     for (id key in dictionary.allKeys) {
         [self setObject:[dictionary objectForKey:key] forKey:key atIndex:i];
         i++;
@@ -1126,7 +1126,7 @@
 
 - (void)removeEntriesInRange:(NSRange)range
 {
-    for (int i = range.location; i < range.location + range.length; i++) {
+    for (NSUInteger i = range.location; i < range.location + range.length; i++) {
         [self removeEntryAtIndex:i];
     }
 }
@@ -1136,7 +1136,7 @@
 - (void)replaceEntryAtIndex:(NSInteger)index withObject:(id)object pairedWithKey:(id<NSCopying>)key
 {
     id oldKey = [keys objectAtIndex:index];
-    [pairs setObject:nil forKey:oldKey];
+    [pairs removeObjectForKey:oldKey];
     [pairs setObject:object forKey:key];
     [keys replaceObjectAtIndex:index withObject:key];
     [objects replaceObjectAtIndex:index withObject:object];
