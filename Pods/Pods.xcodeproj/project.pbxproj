@@ -8,7 +8,7 @@
 
 /* Begin PBXFileReference section */
 		8FF852D148874AB79CCFD6AD /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		CAF14D1E189358D400843B42 /* NSOrderedDictionary.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = NSOrderedDictionary.podspec; path = ../NSOrderedDictionary.podspec; sourceTree = "<group>"; };
+		CAF14D1E189358D400843B42 /* M13OrderedDictionary.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = M13OrderedDictionary.podspec; path = ../M13OrderedDictionary.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -16,7 +16,7 @@
 			isa = PBXGroup;
 			children = (
 				8FF852D148874AB79CCFD6AD /* Podfile */,
-				CAF14D1E189358D400843B42 /* NSOrderedDictionary.podspec */,
+				CAF14D1E189358D400843B42 /* M13OrderedDictionary.podspec */,
 				263CED652E264CB1AADF8E99 /* Frameworks */,
 				A23C45FA94764DA7A5C308A7 /* Products */,
 				95A1456C16E24E2D952FDA58 /* Targets Support Files */,

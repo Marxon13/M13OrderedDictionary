@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CAC53480167D3EA900E66DFC"
                BuildableName = "NSOrderedDictionary.app"
-               BlueprintName = "NSOrderedDictionary"
-               ReferencedContainer = "container:NSOrderedDictionary.xcodeproj">
+               BlueprintName = "M13OrderedDictionary"
+               ReferencedContainer = "container:M13OrderedDictionary.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAC53480167D3EA900E66DFC"
             BuildableName = "NSOrderedDictionary.app"
-            BlueprintName = "NSOrderedDictionary"
-            ReferencedContainer = "container:NSOrderedDictionary.xcodeproj">
+            BlueprintName = "M13OrderedDictionary"
+            ReferencedContainer = "container:M13OrderedDictionary.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAC53480167D3EA900E66DFC"
             BuildableName = "NSOrderedDictionary.app"
-            BlueprintName = "NSOrderedDictionary"
-            ReferencedContainer = "container:NSOrderedDictionary.xcodeproj">
+            BlueprintName = "M13OrderedDictionary"
+            ReferencedContainer = "container:M13OrderedDictionary.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAC53480167D3EA900E66DFC"
             BuildableName = "NSOrderedDictionary.app"
-            BlueprintName = "NSOrderedDictionary"
-            ReferencedContainer = "container:NSOrderedDictionary.xcodeproj">
+            BlueprintName = "M13OrderedDictionary"
+            ReferencedContainer = "container:M13OrderedDictionary.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

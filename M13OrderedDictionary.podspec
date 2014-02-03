@@ -2,15 +2,15 @@ Pod::Spec.new do |s|
 
 
 
-  s.name         = "NSOrderedDictionary"
+  s.name         = "M13OrderedDictionary"
   s.version      = "1.0.1"
   s.summary      = "A cross between NSArray and NSDictionary. It holds an ordered list of objects and keys."
 
   s.description  = <<-DESC
-                   All of which can be accessed by index, or key. This class is not a minimally finished class, with one or two methods. It follows Apple's subclassing protocols for NSArray and NSDictionary. It has methods comparable to all of NSArray's methods and all of NSDictionary's methods. It also supports NSCoding, NSCopying, KVO, and supports NSFastEnumeration over the objects or keys. It is the only fully implemented ordered dictionary class.
+                   A cross between NSArray and NSDictionary. It holds an ordered list of objects and keys. All of which can be accessed by index, or key. This class is not a minimally finished class, with one or two methods. It follows Apple's subclassing protocols for NSArray and NSDictionary. It has methods comparable to all of NSArray's methods and all of NSDictionary's methods. It also supports NSCoding, NSCopying, KVO, and supports NSFastEnumeration over the objects or keys. It is the only fully implemented ordered dictionary class.
                    DESC
 
-  s.homepage     = "https://github.com/Marxon13/NSOrderedDictionary"
+  s.homepage     = "https://github.com/Marxon13/M13OrderedDictionary"
 
   s.license      = {:type => 'MIT',
                     :text => <<-LICENSE
@@ -32,9 +32,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   s.ios.deployment_target = '6.1'
   s.osx.deployment_target = '10.7'
 
-  s.source       = { :git => "https://github.com/Marxon13/NSOrderedDictionary.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/Marxon13/M13OrderedDictionary.git", :tag => "v#{s.version}" }
 
-  s.source_files  = 'NSOrderedDictionary.h', 'NSOrderedDictionary.m'
+  s.source_files  = 'M13OrderedDictionary.h', 'M13OrderedDictionary.m'
 
   s.framework  = 'Foundation'
 

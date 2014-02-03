@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA0F92881896BC2A0034DCB3 /* NSOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0F92871896BC2A0034DCB3 /* NSOrderedDictionary.m */; };
+		CA0F92881896BC2A0034DCB3 /* M13OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0F92871896BC2A0034DCB3 /* M13OrderedDictionary.m */; };
 		CAC53486167D3EA900E66DFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC53485167D3EA900E66DFC /* UIKit.framework */; };
 		CAC53488167D3EA900E66DFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC53487167D3EA900E66DFC /* Foundation.framework */; };
 		CAC5348A167D3EA900E66DFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC53489167D3EA900E66DFC /* CoreGraphics.framework */; };
@@ -20,16 +20,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CA0F92861896BC2A0034DCB3 /* NSOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOrderedDictionary.h; sourceTree = SOURCE_ROOT; };
-		CA0F92871896BC2A0034DCB3 /* NSOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOrderedDictionary.m; sourceTree = SOURCE_ROOT; };
-		CAC53481167D3EA900E66DFC /* NSOrderedDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSOrderedDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA0F92861896BC2A0034DCB3 /* M13OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13OrderedDictionary.h; sourceTree = SOURCE_ROOT; };
+		CA0F92871896BC2A0034DCB3 /* M13OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13OrderedDictionary.m; sourceTree = SOURCE_ROOT; };
+		CAC53481167D3EA900E66DFC /* M13OrderedDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M13OrderedDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC53485167D3EA900E66DFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CAC53487167D3EA900E66DFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CAC53489167D3EA900E66DFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CAC5348D167D3EA900E66DFC /* NSOrderedDictionary-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSOrderedDictionary-Info.plist"; sourceTree = "<group>"; };
+		CAC5348D167D3EA900E66DFC /* M13OrderedDictionary-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "M13OrderedDictionary-Info.plist"; sourceTree = "<group>"; };
 		CAC5348F167D3EA900E66DFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CAC53491167D3EA900E66DFC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CAC53493167D3EA900E66DFC /* NSOrderedDictionary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOrderedDictionary-Prefix.pch"; sourceTree = "<group>"; };
+		CAC53493167D3EA900E66DFC /* M13OrderedDictionary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "M13OrderedDictionary-Prefix.pch"; sourceTree = "<group>"; };
 		CAC53494167D3EA900E66DFC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAC53495167D3EA900E66DFC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CAC53497167D3EA900E66DFC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		CAC53482167D3EA900E66DFC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CAC53481167D3EA900E66DFC /* NSOrderedDictionary.app */,
+				CAC53481167D3EA900E66DFC /* M13OrderedDictionary.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,8 +83,8 @@
 			children = (
 				CAC53494167D3EA900E66DFC /* AppDelegate.h */,
 				CAC53495167D3EA900E66DFC /* AppDelegate.m */,
-				CA0F92861896BC2A0034DCB3 /* NSOrderedDictionary.h */,
-				CA0F92871896BC2A0034DCB3 /* NSOrderedDictionary.m */,
+				CA0F92861896BC2A0034DCB3 /* M13OrderedDictionary.h */,
+				CA0F92871896BC2A0034DCB3 /* M13OrderedDictionary.m */,
 				CAC5348C167D3EA900E66DFC /* Supporting Files */,
 			);
 			path = NSOrderedDictionary;
@@ -93,10 +93,10 @@
 		CAC5348C167D3EA900E66DFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CAC5348D167D3EA900E66DFC /* NSOrderedDictionary-Info.plist */,
+				CAC5348D167D3EA900E66DFC /* M13OrderedDictionary-Info.plist */,
 				CAC5348E167D3EA900E66DFC /* InfoPlist.strings */,
 				CAC53491167D3EA900E66DFC /* main.m */,
-				CAC53493167D3EA900E66DFC /* NSOrderedDictionary-Prefix.pch */,
+				CAC53493167D3EA900E66DFC /* M13OrderedDictionary-Prefix.pch */,
 				CAC53497167D3EA900E66DFC /* Default.png */,
 				CAC53499167D3EA900E66DFC /* Default@2x.png */,
 				CAC5349B167D3EA900E66DFC /* Default-568h@2x.png */,
@@ -107,9 +107,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CAC53480167D3EA900E66DFC /* NSOrderedDictionary */ = {
+		CAC53480167D3EA900E66DFC /* M13OrderedDictionary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CAC5349F167D3EA900E66DFC /* Build configuration list for PBXNativeTarget "NSOrderedDictionary" */;
+			buildConfigurationList = CAC5349F167D3EA900E66DFC /* Build configuration list for PBXNativeTarget "M13OrderedDictionary" */;
 			buildPhases = (
 				CAC5347D167D3EA900E66DFC /* Sources */,
 				CAC5347E167D3EA900E66DFC /* Frameworks */,
@@ -119,9 +119,9 @@
 			);
 			dependencies = (
 			);
-			name = NSOrderedDictionary;
+			name = M13OrderedDictionary;
 			productName = NSOrderedDictionary;
-			productReference = CAC53481167D3EA900E66DFC /* NSOrderedDictionary.app */;
+			productReference = CAC53481167D3EA900E66DFC /* M13OrderedDictionary.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -133,7 +133,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Brandon McQuilkin";
 			};
-			buildConfigurationList = CAC5347B167D3EA900E66DFC /* Build configuration list for PBXProject "NSOrderedDictionary" */;
+			buildConfigurationList = CAC5347B167D3EA900E66DFC /* Build configuration list for PBXProject "M13OrderedDictionary" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -145,7 +145,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CAC53480167D3EA900E66DFC /* NSOrderedDictionary */,
+				CAC53480167D3EA900E66DFC /* M13OrderedDictionary */,
 			);
 		};
 /* End PBXProject section */
@@ -170,7 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAC53492167D3EA900E66DFC /* main.m in Sources */,
-				CA0F92881896BC2A0034DCB3 /* NSOrderedDictionary.m in Sources */,
+				CA0F92881896BC2A0034DCB3 /* M13OrderedDictionary.m in Sources */,
 				CAC53496167D3EA900E66DFC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,9 +245,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NSOrderedDictionary/NSOrderedDictionary-Prefix.pch";
-				INFOPLIST_FILE = "NSOrderedDictionary/NSOrderedDictionary-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "NSOrderedDictionary/M13OrderedDictionary-Prefix.pch";
+				INFOPLIST_FILE = "NSOrderedDictionary/M13OrderedDictionary-Info.plist";
+				PRODUCT_NAME = M13OrderedDictionary;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -256,9 +256,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NSOrderedDictionary/NSOrderedDictionary-Prefix.pch";
-				INFOPLIST_FILE = "NSOrderedDictionary/NSOrderedDictionary-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "NSOrderedDictionary/M13OrderedDictionary-Prefix.pch";
+				INFOPLIST_FILE = "NSOrderedDictionary/M13OrderedDictionary-Info.plist";
+				PRODUCT_NAME = M13OrderedDictionary;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -266,7 +266,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CAC5347B167D3EA900E66DFC /* Build configuration list for PBXProject "NSOrderedDictionary" */ = {
+		CAC5347B167D3EA900E66DFC /* Build configuration list for PBXProject "M13OrderedDictionary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CAC5349D167D3EA900E66DFC /* Debug */,
@@ -275,7 +275,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CAC5349F167D3EA900E66DFC /* Build configuration list for PBXNativeTarget "NSOrderedDictionary" */ = {
+		CAC5349F167D3EA900E66DFC /* Build configuration list for PBXNativeTarget "M13OrderedDictionary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CAC534A0167D3EA900E66DFC /* Debug */,

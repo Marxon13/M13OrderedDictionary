@@ -1,9 +1,9 @@
-<img src="https://raw.github.com/Marxon13/NSOrderedDictionary/master/ReadmeResources/NSOrderedDictionaryBanner.png">
+<img src="https://raw.github.com/Marxon13/M13OrderedDictionary/master/ReadmeResources/M13OrderedDictionaryBanner.png">
 
-NSOrderedDictionary
+M13OrderedDictionary
 ============
 
-NSOrderedDictionary is a cross between NSArray and NSDictionary. It holds an ordered list of objects and keys. All of which can be accessed by index, or key. This class is the only fully implemented ordered dictionary class for Objective C. It follows Apple's subclassing protocols for NSArray and NSDictionary. It has methods comparable to all of NSArray's methods and all of NSDictionary's methods. It also supports NSCoding, NSCopying, KVO, and supports NSFastEnumeration over the objects or keys.
+M13OrderedDictionary is a cross between NSArray and NSDictionary. It holds an ordered list of objects and keys. All of which can be accessed by index, or key. This class is the only fully implemented ordered dictionary class for Objective C. It follows Apple's subclassing protocols for NSArray and NSDictionary. It has methods comparable to all of NSArray's methods and all of NSDictionary's methods. It also supports NSCoding, NSCopying, KVO, and supports NSFastEnumeration over the objects or keys.
 
 Features:
 ----------
@@ -29,7 +29,7 @@ Features:
 
 Usage:
 -------
-Just add NSOrderedDictionary.h and NSOrderedDictionary.m to your projects, and start using. Explanations of each method, or set of methods are given in the interface file.
+Just add M13OrderedDictionary.h and M13OrderedDictionary.m to your projects, and start using. Explanations of each method, or set of methods are given in the interface file.
 
 There are three main terms used throughout the methods:
 

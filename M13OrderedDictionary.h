@@ -18,69 +18,69 @@
  Key - refers to <(id)NSCopying>, with an associated object.
  
  Each method at the end of its corresponding description will indicate what object (NSArray, NSDictionary) which that method is drawn from, so it is easier to find a longer description of what the method does.*/
-@interface NSOrderedDictionary : NSObject <NSCopying, NSFastEnumeration, NSCoding>
+@interface M13OrderedDictionary : NSObject <NSCopying, NSFastEnumeration, NSCoding>
 {
     NSMutableArray *keys;
     NSMutableArray *objects;
     NSMutableDictionary *pairs;
 }
 /**@name Creation*/
-/**Creates a new NSOrderedDictionary object.
- @return A NSOrderedDictionary object.*/
-+ (id)orderedDictionary;
-/**Duplicates the NSOrderedDictionary, which will refrence the same objects that are in the given ordered dictionary.
- @param orderedDictionary The NSOrderedDictionary to duplicate.
- @return A NSOrderedDictionary object.*/
-+ (id)orderedDictionaryWithOrderedDictionary:(NSOrderedDictionary *)orderedDictionary;
-/**Loads an NSOrderedDictionary from file.
+/**Creates a new M13OrderedDictionary object.
+ @return A M13OrderedDictionary object.*/
++ (instancetype)orderedDictionary;
+/**Duplicates the M13OrderedDictionary, which will refrence the same objects that are in the given ordered dictionary.
+ @param orderedDictionary The M13OrderedDictionary to duplicate.
+ @return A M13OrderedDictionary object.*/
++ (instancetype)orderedDictionaryWithOrderedDictionary:(M13OrderedDictionary *)orderedDictionary;
+/**Loads an M13OrderedDictionary from file.
  @param path The path of the file to load.
-  @return A NSOrderedDictionary object.*/
-+ (id)orderedDictionaryWithContentsOfFile:(NSString *)path;
-/**Loads an NSOrderedDictionary from the file at the given URL.
+  @return A M13OrderedDictionary object.*/
++ (instancetype)orderedDictionaryWithContentsOfFile:(NSString *)path;
+/**Loads an M13OrderedDictionary from the file at the given URL.
  @param URL The url of the file to load.
- @return A NSOrderedDictionary object.*/
-+ (id)orderedDictionaryWithContentsOfURL:(NSURL *)URL;
-/**Create an NSOrderedDictionary with single entry.
- @param anObject The object that will be added to the NSOrderedDictionary.
- @param aKey The key for the object added to the NSOrderedDictionary.
- @return A NSOrderedDictionary object.*/
- + (id)orderedDictionaryWithObject:(id)anObject pairedWithKey:(id<NSCopying>)aKey;
-/**Create an NSOrderedDictionary with the contents of a NSDictionary.
+ @return A M13OrderedDictionary object.*/
++ (instancetype)orderedDictionaryWithContentsOfURL:(NSURL *)URL;
+/**Create an M13OrderedDictionary with single entry.
+ @param anObject The object that will be added to the M13OrderedDictionary.
+ @param aKey The key for the object added to the M13OrderedDictionary.
+ @return A M13OrderedDictionary object.*/
++ (instancetype)orderedDictionaryWithObject:(id)anObject pairedWithKey:(id<NSCopying>)aKey;
+/**Create an M13OrderedDictionary with the contents of a NSDictionary.
  @param entries The NSDictionary to fill the ordered dictionary with.
- @return A NSOrderedDictionary object.
+ @return A M13OrderedDictionary object.
  @note The ordered dictionary entries will be ordered in the way their keys are returned by entries.allKeys*/
-+ (id)orderedDictionaryWithDictionary:(NSDictionary *)entries;
++ (instancetype)orderedDictionaryWithDictionary:(NSDictionary *)entries;
 
 /**@name Initalization*/
-/**Initalizes a new NSOrderedDictionary object.
- @return A NSOrderedDictionary object.*/
+/**Initalizes a new M13OrderedDictionary object.
+ @return A M13OrderedDictionary object.*/
 - (id)init;
-/**Initializes an new NSOrderedDictionary object with another orderedDictionary, placing in itself the entries from the given orderedDictionary.
+/**Initializes an new M13OrderedDictionary object with another orderedDictionary, placing in itself the entries from the given orderedDictionary.
  @param orderedDictionary The dictionary to retreive the objects from.
- @return A NSOrderedDictionary object.*/
-- (id)initWithOrderedDictionary:(NSOrderedDictionary *)orderedDictionary;
-/**Initializes an new NSOrderedDictionary object with another orderedDictionary, optionally placing in itself copied entries from the given orderedDictionary.
+ @return A M13OrderedDictionary object.*/
+- (id)initWithOrderedDictionary:(M13OrderedDictionary *)orderedDictionary;
+/**Initializes an new M13OrderedDictionary object with another orderedDictionary, optionally placing in itself copied entries from the given orderedDictionary.
  @param orderedDictionary The dictionary to retreive the objects from.
  @param flag Wether or not to copy the retreived objects.
- @return A NSOrderedDictionary object.*/
-- (id)initWithOrderedDictionary:(NSOrderedDictionary *)orderedDictionary copyEntries:(BOOL)flag;
-/**Initializes a newly allocated NSOrderedDictionary with the contents of the file at the given path.
+ @return A M13OrderedDictionary object.*/
+- (id)initWithOrderedDictionary:(M13OrderedDictionary *)orderedDictionary copyEntries:(BOOL)flag;
+/**Initializes a newly allocated M13OrderedDictionary with the contents of the file at the given path.
  @param path The path of the file to load.
- @return A NSOrderedDictionary object.*/
+ @return A M13OrderedDictionary object.*/
 - (id)initWithContentsOfFile:(NSString *)path;
-/**Initalizes an NSOrderedDictionary from the file at the given URL.
+/**Initalizes an M13OrderedDictionary from the file at the given URL.
  @param URL The url of the file to load.
- @return A NSOrderedDictionary object.*/
+ @return A M13OrderedDictionary object.*/
 - (id)initWithContentsOfURL:(NSURL *)URL;
-/**Initalizes an NSOrderedDictionary with the contents of a NSDictionary.
+/**Initalizes an M13OrderedDictionary with the contents of a NSDictionary.
  @param entries The NSDictionary to fill the ordered dictionary with.
- @return A NSOrderedDictionary object.
+ @return A M13OrderedDictionary object.
  @note The ordered dictionary entries will be ordered in the way their keys are returned by entries.allKeys*/
 - (id)initWithContentsOfDictionary:(NSDictionary *)entries;
-/**Initalizes an NSOrderedDictionary with the given objects and keys.
- @param orderedObjects The array objects that will be added to the NSOrderedDictionary.
- @param orderedKeys The keys for the objects added to the NSOrderedDictionary, given in the same order as the objects.
- @return A NSOrderedDictionary object.*/
+/**Initalizes an M13OrderedDictionary with the given objects and keys.
+ @param orderedObjects The array objects that will be added to the M13OrderedDictionary.
+ @param orderedKeys The keys for the objects added to the M13OrderedDictionary, given in the same order as the objects.
+ @return A M13OrderedDictionary object.*/
 - (id)initWithObjects:(NSArray *)orderedObjects pairedWithKeys:(NSArray *)orderedKeys;
 
 /**@name Querying*/
@@ -136,7 +136,7 @@
 /**The array containing the entries at the given index set.
  @param indices The indices to retreive the entries from.
  @return The array containing the entries at the given index set.*/
-- (NSOrderedDictionary *)entriesAtIndices:(NSIndexSet *)indices;
+- (M13OrderedDictionary *)entriesAtIndices:(NSIndexSet *)indices;
 /**The dictionary containing the entries at the given index set.
  @param indices The indices to retreive the entries from.
  @return The dictionary containing the entries at the given index set.*/
@@ -354,45 +354,45 @@
 /**Returns the first object contained in the receiving orderedDictionary that’s equal to an object in the given ordered dictionary.
  @param orderedDictionary The orderedDictionary to compare to.
  @return The first object contained in the receiving orderedDictionary that’s equal to an object in the given ordered dictionary.*/
-- (id)firstObjectInCommonWithOrderedDictionary:(NSOrderedDictionary *)otherOrderedDictionary;
+- (id)firstObjectInCommonWithOrderedDictionary:(M13OrderedDictionary *)otherOrderedDictionary;
 /**Returns the first key contained in the receiving orderedDictionary that’s equal to a key in the given ordered dictionary.
  @param orderedDictionary The orderedDictionary to compare to.
  @return The first key contained in the receiving orderedDictionary that’s equal to a key in the given ordered dictionary.*/
-- (id)firstKeyInCommonWithOrderedDictionary:(NSOrderedDictionary *)otherOrderedDictionary;
+- (id)firstKeyInCommonWithOrderedDictionary:(M13OrderedDictionary *)otherOrderedDictionary;
 /**Returns the first entry contained in the receiving orderedDictionary that’s equal to an entry in the given ordered dictionary.
  @param orderedDictionary The orderedDictionary to compare to.
  @return The first entry contained in the receiving orderedDictionary that’s equal to an entry in the given ordered dictionary.*/
-- (id)firstEntryInCommonWithOrderedDictionary:(NSOrderedDictionary *)otherOrderedDictionary;
+- (id)firstEntryInCommonWithOrderedDictionary:(M13OrderedDictionary *)otherOrderedDictionary;
 
 /**Returns wether or not two ordered dictionaries are equal. Two orderedDictionarys have equal contents if they each hold the same number of objects and objects and keys at a given index in each array satisfy the isEqual: test.
  @param otherOrderedDictionary The ordered dictionary to compare to.
  @return Wether or not the two ordered dictionaries are equal.*/
-- (BOOL)isEqualToOrderedDictionary:(NSOrderedDictionary *)otherOrderedDictionary;
+- (BOOL)isEqualToOrderedDictionary:(M13OrderedDictionary *)otherOrderedDictionary;
 
 /**@name Deriving*/
 /**Duplicate the ordered dictionary and add an entry to it.
  @param object The object to add.
  @param aKey The key for the given object.
- @return A new NSOrderedDictionary containing all the entries in the receiver plus the given entry.*/
-- (NSOrderedDictionary *)orderedDictionaryByAddingObject:(id)object pairedWithKey:(id<NSCopying>)aKey;
+ @return A new M13OrderedDictionary containing all the entries in the receiver plus the given entry.*/
+- (M13OrderedDictionary *)orderedDictionaryByAddingObject:(id)object pairedWithKey:(id<NSCopying>)aKey;
 /**Duplicate the ordered dictionary and add an entry to it.
  @param entry The entry to add.
- @return A new NSOrderedDictionary containing all the entries in the receiver plus the given entry.*/
-- (NSOrderedDictionary *)orderedDictionaryByAddingEntry:(NSDictionary *)entry;
+ @return A new M13OrderedDictionary containing all the entries in the receiver plus the given entry.*/
+- (M13OrderedDictionary *)orderedDictionaryByAddingEntry:(NSDictionary *)entry;
 /**Duplicate the ordered dictionary and add an entries to it.
  @param orderedObjects The array of objects to add to the ordered dictionary.
  @param orderedKeys The array of keys that correspond to the given objects.
- @return A new NSOrderedDictionary containing all the entries in the receiver plus the given entries.*/
-- (NSOrderedDictionary *)orderedDictionaryByAddingObjects:(NSArray *)orderedObjects pairedWithKeys:(NSArray *)orderedKeys;
+ @return A new M13OrderedDictionary containing all the entries in the receiver plus the given entries.*/
+- (M13OrderedDictionary *)orderedDictionaryByAddingObjects:(NSArray *)orderedObjects pairedWithKeys:(NSArray *)orderedKeys;
 
 /**Evaluates a given predicate against each object in the receiving orderedDictionary and returns a new orderedDictionary containing the objects for which the predicate returns true.
  @param predicate The predicate that tests each entry.
  @return A new orderedDictionary containing the objects for which the predicate returns true*/
-- (NSOrderedDictionary *)filteredOrderDictionarysUsingPredicateForObjects:(NSPredicate *)predicate;
+- (M13OrderedDictionary *)filteredOrderDictionarysUsingPredicateForObjects:(NSPredicate *)predicate;
 /**Returns a new orderedDictionary containing the receiving orderedDictionary's elements that fall within the limits specified by a given range.
  @param range The range to retreive entries from.
  @return The receiving orderedDictionary's elements that fall within the limits specified by the given range.*/
-- (NSOrderedDictionary *)subOrderedDictionaryWithRange:(NSRange)range;
+- (M13OrderedDictionary *)subOrderedDictionaryWithRange:(NSRange)range;
 
 /**@name Sorting*/
 /**Analyzes the ordered Dictionary and returns a hint that speeds the sorting of the objects when the hint is supplied to sorted______UsingFunction:context:hint:.
@@ -406,63 +406,63 @@
  @param comparator The comparator to perform the sorting operation with.
  @param context The context to sort the objects in.
  @return  A new orderedDictionary that lists the receiving orderedDictionary objects in ascending order as defined by the comparison function comparator.*/
-- (NSOrderedDictionary *)sortedByObjectsUsingFunction:(NSInteger (*)(id, id, void *))comparator context:(void *)context;
+- (M13OrderedDictionary *)sortedByObjectsUsingFunction:(NSInteger (*)(id, id, void *))comparator context:(void *)context;
 /**Returns a new orderedDictionary that lists the receiving orderedDictionary keys in ascending order as defined by the comparison function comparator.
  @param comparator The comparator to perform the sorting operation with.
  @param context The context to sort the objects in.
  @return  A new orderedDictionary that lists the receiving orderedDictionary keys in ascending order as defined by the comparison function comparator.*/
-- (NSOrderedDictionary *)sortedByKeysUsingFunction:(NSInteger (*)(id<NSCopying>, id<NSCopying>, void *))comparator context:(void *)context;
+- (M13OrderedDictionary *)sortedByKeysUsingFunction:(NSInteger (*)(id<NSCopying>, id<NSCopying>, void *))comparator context:(void *)context;
 
 /**Returns a new orderedDictionary that lists the receiving orderedDictionary objects in ascending order as defined by the comparison function comparator.
  @param comparator The comparator to perform the sorting operation with.
  @param context The context to sort the objects in.
  @param hit The sorting hint to speed sorting.
  @return  A new orderedDictionary that lists the receiving orderedDictionary objects in ascending order as defined by the comparison function comparator.*/
-- (NSOrderedDictionary *)sortedByObjectsUsingFunction:(NSInteger (*)(id, id, void *))comparator context:(void *)context hint:(NSData *)hint;
+- (M13OrderedDictionary *)sortedByObjectsUsingFunction:(NSInteger (*)(id, id, void *))comparator context:(void *)context hint:(NSData *)hint;
 /**Returns a new orderedDictionary that lists the receiving orderedDictionary keys in ascending order as defined by the comparison function comparator.
  @param comparator The comparator to perform the sorting operation with.
  @param context The context to sort the objects in.
  @param hit The sorting hint to speed sorting.
  @return  A new orderedDictionary that lists the receiving orderedDictionary keys in ascending order as defined by the comparison function comparator.*/
-- (NSOrderedDictionary *)sortedByKeysUsingFunction:(NSInteger (*)(id<NSCopying>, id<NSCopying>, void *))comparator context:(void *)context hint:(NSData *)hint;
+- (M13OrderedDictionary *)sortedByKeysUsingFunction:(NSInteger (*)(id<NSCopying>, id<NSCopying>, void *))comparator context:(void *)context hint:(NSData *)hint;
 
 /**Returns a copy of the receiving orderedDicitionary's objects sorted as specified by a given array of sort descriptors.
  @param descriptors The NSSortDescriptors to sort with.
  @return A copy of the receiving orderedDicitionary's objects sorted as specified by a given array of sort descriptors.*/
-- (NSOrderedDictionary *)sortedByObjectsUsingDescriptors:(NSArray *)descriptors;
+- (M13OrderedDictionary *)sortedByObjectsUsingDescriptors:(NSArray *)descriptors;
 /**Returns a copy of the receiving orderedDicitionary's keys sorted as specified by a given array of sort descriptors.
  @param descriptors The NSSortDescriptors to sort with.
  @return A copy of the receiving orderedDicitionary's keys sorted as specified by a given array of sort descriptors.*/
-- (NSOrderedDictionary *)sortedByKeysUsingDescriptors:(NSArray *)descriptors;
+- (M13OrderedDictionary *)sortedByKeysUsingDescriptors:(NSArray *)descriptors;
 
 /**Returns an orderedDictionary that lists the receiving orderedDictionary's objects in ascending order, as determined by the comparison method specified by a given selector.
  @param comparator The comparator to sort with.
  @return An orderedDictionary that lists the receiving orderedDictionary's objects in ascending order, as determined by the comparison method specified by a given selector.*/
-- (NSOrderedDictionary *)sortedByObjectsUsingSelector:(SEL)comparator;
+- (M13OrderedDictionary *)sortedByObjectsUsingSelector:(SEL)comparator;
 /**Returns an orderedDictionary that lists the receiving orderedDictionary's keys in ascending order, as determined by the comparison method specified by a given selector.
  @param comparator The comparator to sort with.
  @return An orderedDictionary that lists the receiving orderedDictionary's keys in ascending order, as determined by the comparison method specified by a given selector.*/
-- (NSOrderedDictionary *)sortedByKeysUsingSelector:(SEL)comparator;
+- (M13OrderedDictionary *)sortedByKeysUsingSelector:(SEL)comparator;
 
 /**Returns an orderedDictionary that lists the receiving orderedDictionary's objects in ascending order, as determined by the comparison method specified by a given NSComparator Block.
  @param cmptr The comparator to sort with.
  @return An orderedDictionary that lists the receiving orderedDictionary's objects in ascending order, as determined by the comparison method specified by a given NSComparator Block.*/
-- (NSOrderedDictionary *)sortedByObjectsUsingComparator:(NSComparator)cmptr;
+- (M13OrderedDictionary *)sortedByObjectsUsingComparator:(NSComparator)cmptr;
 /**Returns an orderedDictionary that lists the receiving orderedDictionary's keys in ascending order, as determined by the comparison method specified by a given NSComparator Block.
  @param cmptr The comparator to sort with.
  @return An orderedDictionary that lists the receiving orderedDictionary's keys in ascending order, as determined by the comparison method specified by a given NSComparator Block.*/
-- (NSOrderedDictionary *)sortedByKeysUsingComparator:(NSComparator)cmptr;
+- (M13OrderedDictionary *)sortedByKeysUsingComparator:(NSComparator)cmptr;
 
 /**Returns an orderedDictionary that lists the receiving orderedDictionary's objects in ascending order, as determined by the comparison method specified by a given NSComparator Block.
  @param opts The sorting options.
  @param cmptr The comparator to sort with.
  @return An orderedDictionary that lists the receiving orderedDictionary's objects in ascending order, as determined by the comparison method specified by a given NSComparator Block.*/
-- (NSOrderedDictionary *)sortedByObjectsWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr;
+- (M13OrderedDictionary *)sortedByObjectsWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr;
 /**Returns an orderedDictionary that lists the receiving orderedDictionary's keys in ascending order, as determined by the comparison method specified by a given NSComparator Block.
  @param opts The sorting options.
  @param cmptr The comparator to sort with.
  @return An orderedDictionary that lists the receiving orderedDictionary's keys in ascending order, as determined by the comparison method specified by a given NSComparator Block.*/
-- (NSOrderedDictionary *)sortedByKeysWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr;
+- (M13OrderedDictionary *)sortedByKeysWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr;
 
 
 /**@name Descriptions*/
@@ -534,7 +534,7 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder;
 /**Initalize the ordered dictionary with a decoder.
  @param decoder The decoder to initalize the ordered dictionary with.
- @return A NSOrderedDictionary.*/
+ @return A M13OrderedDictionary.*/
 - (id)initWithCoder:(NSCoder *)decoder;
 
 /**@name NSCopying*/
@@ -569,14 +569,14 @@
 
 @end
 
-/**A mutable version of NSOrderedDictionary*/
-@interface NSMutableOrderedDictionary : NSOrderedDictionary
+/**A mutable version of M13OrderedDictionary*/
+@interface NSMutableOrderedDictionary : M13OrderedDictionary
 
 /**@name Creation and Initalization*/
 /**Create the mutable ordered dictionary with the given capacity.
  @param The capacity of the ordered dictionary.
  @return A NSMutableOrderedDictionary object.*/
-+ (id)orderedDictionaryWithCapacity:(NSUInteger)numEntries;
++ (instancetype)orderedDictionaryWithCapacity:(NSUInteger)numEntries;
 /**Initalize the mutable ordered dictionary with the given capacity.
  @param The capacity of the ordered dictionary.
  @return A NSMutableOrderedDictionary object.*/
@@ -592,7 +592,7 @@
 - (void)addEntry:(NSDictionary *)entry;
 /**Add the entries at the end of the orderedDictionary. If a key exists, its entry will be deleted, before the entry is added.
  @param orderedDictionary The orderedDictionary of entries to add.*/
-- (void)addEntriesFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary;
+- (void)addEntriesFromOrderedDictionary:(M13OrderedDictionary *)orderedDictionary;
 /**Add the entries at the end of the orderedDictionary. If a key exists, its entry will be deleted, before the entry is added.
  @param dictionary The dictionary of entries to add.*/
 - (void)addEntriesFromDictionary:(NSDictionary *)dictionary;
@@ -609,7 +609,7 @@
 /**Insert the entries from the given ordered dictionary at the specific index. If a key exists, its entry will be deleted, before the entry is inserted; also, the insertion compensates for the deleted key, so the entry will end up between the same to indices regardless if a key is deleted or not.
  @param orderedDictionary The entries to add.
  @param index The index to place the given entries*/
-- (void)insertEntriesFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary atIndex:(NSUInteger)index;
+- (void)insertEntriesFromOrderedDictionary:(M13OrderedDictionary *)orderedDictionary atIndex:(NSUInteger)index;
 /**Insert the entries from the given dictionary at the specific index. If a key exists, its entry will be deleted, before the entry is inserted; also, the insertion compensates for the deleted key, so the entry will end up between the same to indices regardless if a key is deleted or not.
  @param dictionary The entries to add.
  @param index The index to place the given entries*/
@@ -624,7 +624,7 @@
 - (void)setEntry:(NSDictionary *)entry;
 /**If a key exists this will overrite the object for said key, not changing the order of keys. If the key does not exist, it will be appended at the end of the ordered dictionary.
  @param orderedDictionary The entries to add.*/
-- (void)setEntriesFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary;
+- (void)setEntriesFromOrderedDictionary:(M13OrderedDictionary *)orderedDictionary;
 /**If a key exists this will overrite the object for said key, not changing the order of keys. If the key does not exist, it will be appended at the end of the ordered dictionary.
  @param dictionary The entries to add.*/
 - (void)setEntriesFromDictionary:(NSDictionary *)dictionary;
@@ -641,7 +641,7 @@
 /**If a key exists will overrite the object for said key, not changing the order of keys. if the key does not exist, the entry will be inserted at the specified index.
  @param orderedDictionary The entries to add.
  @param index The index to insert the entryies if the key for an entry does not exist.*/
-- (void)setEntriesFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary atIndex:(NSUInteger)index;
+- (void)setEntriesFromOrderedDictionary:(M13OrderedDictionary *)orderedDictionary atIndex:(NSUInteger)index;
 /**If a key exists will overrite the object for said key, not changing the order of keys. if the key does not exist, the entry will be inserted at the specified index.
  @param dictionary The entries to add.
  @param index The index to insert the entries if the key for an entry does not exist.*/
@@ -746,7 +746,7 @@
 /**Replace the entries at the given indices with the given entries.
  @param indices The indices to replace.
  @param orderedDictionary The entries to insert.*/
-- (void)replaceEntriesAtIndices:(NSIndexSet *)indices withEntriesFromOrderedDictionary:(NSOrderedDictionary *)orderedDictionary;
+- (void)replaceEntriesAtIndices:(NSIndexSet *)indices withEntriesFromOrderedDictionary:(M13OrderedDictionary *)orderedDictionary;
 
 /**Replace the entries in the given range with the given entries in the given range.
  @param range The range of objects to be replaced.
@@ -764,7 +764,7 @@
  @param range The range of objects to be replaced.
  @param orderedDictionary The entries to insert.
  @param range2 The range of the objects to insert.*/
-- (void)replaceEntriesInRange:(NSRange)range withEntriesFromOrderedDictionary:(NSOrderedDictionary *)dictionary inRange:(NSRange)range2;
+- (void)replaceEntriesInRange:(NSRange)range withEntriesFromOrderedDictionary:(M13OrderedDictionary *)dictionary inRange:(NSRange)range2;
 /**Replace the entries in the given range with the given entries.
  @param range The range of objects to be replaced.
  @param objects The objects of the new entries.
@@ -779,14 +779,14 @@
 /**Replace the entries in the given range with the given entries in the given range.
  @param range The range of objects to be replaced.
  @param orderedDictionary The entries to insert.*/
-- (void)replaceEntriesInRange:(NSRange)range withEntriesFromOrderedDictionary:(NSOrderedDictionary *)dictionary;
+- (void)replaceEntriesInRange:(NSRange)range withEntriesFromOrderedDictionary:(M13OrderedDictionary *)dictionary;
 /**Replace the current entries with the given entries. If there are less entries given than in the ordered dictionary, the entries past the count of the given entries will not be replaced.
  @param objects The objects of the new entries.
  @param keys The keys of the new entries.*/
 - (void)setEntriesToObjects:(NSArray *)objects pairedWithKeys:(NSArray *)keys;
 /**Replace the current entries with the given entries. If there are less entries given than in the ordered dictionary, the entries past the count of the given entries will not be replaced.
  @param orderedDictionary The new entries.*/
-- (void)setEntriesToOrderedDictionary:(NSOrderedDictionary *)orderedDictionary;
+- (void)setEntriesToOrderedDictionary:(M13OrderedDictionary *)orderedDictionary;
 
 /**@name Filtering Content*/
 /**Filter the ordered dictionary by removing objects that do not pass the predicate.
