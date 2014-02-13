@@ -29,7 +29,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
   s.author       = { "Brandon McQuilkin" => "marxon13@yahoo.com" }
 
-  s.ios.deployment_target = '6.1'
+  s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.7'
 
   s.source       = { :git => "https://github.com/Marxon13/M13OrderedDictionary.git", :tag => "v#{s.version}" }
