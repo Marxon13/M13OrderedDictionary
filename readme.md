@@ -7,7 +7,6 @@ M13OrderedDictionary is a cross between NSArray and NSDictionary. It holds an or
 
 Features:
 ----------
-* Uses NS prefix for seamless integration into existing code.
 
 * Setup as easy as setting up a NSArray or NSDictionary.
 
