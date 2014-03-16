@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>EAEE08C7-1699-45B9-8E92-75FB949F64C9</string>
+	<string>87933A7B-DEEA-45D2-A9C9-ECFD42622B81</string>
 	<key>IDESourceControlProjectName</key>
-	<string>NSOrderedDictionary</string>
+	<string>M13OrderedDictionary</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2A58D87D-0C3D-4E3E-B996-44464EA9164D</key>
 		<string>https://github.com/Marxon13/M13OrderedDictionary.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>NSOrderedDictionary.xcworkspace</string>
+	<string>M13OrderedDictionary.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2A58D87D-0C3D-4E3E-B996-44464EA9164D</key>
-		<string>..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Marxon13/M13OrderedDictionary.git</string>
