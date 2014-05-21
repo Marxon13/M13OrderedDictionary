@@ -570,16 +570,16 @@
 @end
 
 /**A mutable version of M13OrderedDictionary*/
-@interface NSMutableOrderedDictionary : M13OrderedDictionary
+@interface M13MutableOrderedDictionary : M13OrderedDictionary
 
 /**@name Creation and Initalization*/
 /**Create the mutable ordered dictionary with the given capacity.
  @param The capacity of the ordered dictionary.
- @return A NSMutableOrderedDictionary object.*/
+ @return A M13MutableOrderedDictionary object.*/
 + (instancetype)orderedDictionaryWithCapacity:(NSUInteger)numEntries;
 /**Initalize the mutable ordered dictionary with the given capacity.
  @param The capacity of the ordered dictionary.
- @return A NSMutableOrderedDictionary object.*/
+ @return A M13MutableOrderedDictionary object.*/
 - (id)initWithCapacity:(NSUInteger)numEntries;
 
 /**@name Adding Objects*/

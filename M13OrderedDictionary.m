@@ -843,7 +843,7 @@
 
 - (id)mutableCopyWithZone:(NSZone *)zone
 {
-    return [[NSMutableOrderedDictionary alloc] initWithOrderedDictionary:self];
+    return [[M13MutableOrderedDictionary alloc] initWithOrderedDictionary:self];
 }
 
 #pragma mark - NSFastEnumeration
@@ -873,18 +873,18 @@
  
  ********************************************************************************/
 
-@implementation NSMutableOrderedDictionary
+@implementation M13MutableOrderedDictionary
 
 #pragma mark - Creating
 
 + (id)orderedDictionaryWithCapacity:(NSUInteger)numEntrys
 {
-    return [[NSMutableOrderedDictionary alloc] initWithCapacity:numEntrys];
+    return [[M13MutableOrderedDictionary alloc] initWithCapacity:numEntrys];
 }
 
 - (id)initWithCapacity:(NSUInteger)numEntrys
 {
-    return [[NSMutableOrderedDictionary alloc] initWithObjects:[NSMutableArray arrayWithCapacity:numEntrys] pairedWithKeys:[NSMutableArray arrayWithCapacity:numEntrys]];
+    return [[M13MutableOrderedDictionary alloc] initWithObjects:[NSMutableArray arrayWithCapacity:numEntrys] pairedWithKeys:[NSMutableArray arrayWithCapacity:numEntrys]];
 }
 
 #pragma mark - Adding Objects
