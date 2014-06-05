@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>87933A7B-DEEA-45D2-A9C9-ECFD42622B81</string>
+	<string>A2290859-C43C-433C-B549-1EE23115D3CB</string>
 	<key>IDESourceControlProjectName</key>
 	<string>M13OrderedDictionary</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2A58D87D-0C3D-4E3E-B996-44464EA9164D</key>
-		<string>https://github.com/Marxon13/M13OrderedDictionary.git</string>
+		<key>5CBA84AC-2517-437E-8596-079CE4775AC9</key>
+		<string>https://github.com/mattquiros/M13OrderedDictionary.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>M13OrderedDictionary.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2A58D87D-0C3D-4E3E-B996-44464EA9164D</key>
+		<key>5CBA84AC-2517-437E-8596-079CE4775AC9</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Marxon13/M13OrderedDictionary.git</string>
+	<string>https://github.com/mattquiros/M13OrderedDictionary.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2A58D87D-0C3D-4E3E-B996-44464EA9164D</string>
+	<string>5CBA84AC-2517-437E-8596-079CE4775AC9</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2A58D87D-0C3D-4E3E-B996-44464EA9164D</string>
+			<string>5CBA84AC-2517-437E-8596-079CE4775AC9</string>
 			<key>IDESourceControlWCCName</key>
 			<string>M13OrderedDictionary</string>
 		</dict>
