@@ -920,18 +920,13 @@
 
 - (void)insertObject:(id)object pairedWithKey:(id<NSCopying>)key atIndex:(NSUInteger)index
 {
-    NSInteger idx = 0;
     if ([pairs objectForKey:key] != nil) {
-        if (index < [self indexOfKey:key]) {
-            idx = index - 1;
-        } else {
-            idx = index;
-        }
         [self removeEntryWithKey:key];
     }
+    
     [pairs setObject:object forKey:key];
-    [keys insertObject:key atIndex:idx];
-    [objects insertObject:object atIndex:idx];
+    [keys insertObject:key atIndex:index];
+    [objects insertObject:object atIndex:index];
 }
 
 - (void)insertEntry:(NSDictionary *)entry atIndex:(NSUInteger)index
