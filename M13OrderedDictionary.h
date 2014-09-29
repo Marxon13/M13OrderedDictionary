@@ -141,6 +141,9 @@
  @param indices The indices to retreive the entries from.
  @return The dictionary containing the entries at the given index set.*/
 - (NSDictionary *)unorderedEntriesAtIndices:(NSIndexSet *)indices;
+/**The dictionary containing all entries and all objects
+ @return The dictionary containing all entries and all objects*/
+- (NSDictionary *)unorderedDictionary;
 
 /**The ordered array of all keys in the ordered dictionary.
  @return The ordered array of all keys in the ordered dictionary.*/

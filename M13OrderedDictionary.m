@@ -188,6 +188,11 @@
     return [NSDictionary dictionaryWithObjects:[objects objectsAtIndexes:indexes] forKeys:[keys objectsAtIndexes:indexes]];
 }
 
+- (NSDictionary *)unorderedDictionary
+{
+    return [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+}
+
 - (NSArray *)allKeys
 {
     return keys;
