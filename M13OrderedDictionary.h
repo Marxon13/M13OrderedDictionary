@@ -328,10 +328,10 @@
  @return The keys of the passing objects.*/
 - (NSArray *)keysOfObjectsAtIndices:(NSIndexSet *)indexSet options:(NSEnumerationOptions)opts passingTest:(BOOL (^)(id obj, NSUInteger idx, BOOL *stop))predicate;
 
-/**@name Preforming Selectors*/
+/**@name Performing Selectors*/
 /**Sends to each object in the orderedDictionary the message identified by a given selector, starting with the first object and continuing through the array to the last object.
  @param aSelector The selector to make the objects perform.*/
-- (void)makeObjectsPreformSelector:(SEL)aSelector;
+- (void)makeObjectsPerformSelector:(SEL)aSelector;
 
 /**Sends the aSelector message to each object in the orderedDictionary, starting with the first object and continuing through the array to the last object.
  @param aSelector The selector to perform.
