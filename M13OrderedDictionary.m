@@ -420,9 +420,9 @@
     return [keys objectsAtIndexes:[objects indexesOfObjectsAtIndexes:indexSet options:opts passingTest:predicate]];
 }
 
-#pragma mark - Preforming Selectors
+#pragma mark - Performing Selectors
 
-- (void)makeObjectsPreformSelector:(SEL)aSelector
+- (void)makeObjectsPerformSelector:(SEL)aSelector
 {
     [objects makeObjectsPerformSelector:aSelector];
 }
