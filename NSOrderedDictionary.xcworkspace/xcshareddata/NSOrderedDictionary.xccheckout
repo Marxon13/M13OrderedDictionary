@@ -10,29 +10,29 @@
 	<string>NSOrderedDictionary</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2A58D87D-0C3D-4E3E-B996-44464EA9164D</key>
+		<key>EB98C87D6503FFC3C1279E95807AA0E8467FFD82</key>
 		<string>https://github.com/Marxon13/M13OrderedDictionary.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>NSOrderedDictionary.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2A58D87D-0C3D-4E3E-B996-44464EA9164D</key>
+		<key>EB98C87D6503FFC3C1279E95807AA0E8467FFD82</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Marxon13/M13OrderedDictionary.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2A58D87D-0C3D-4E3E-B996-44464EA9164D</string>
+	<string>EB98C87D6503FFC3C1279E95807AA0E8467FFD82</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2A58D87D-0C3D-4E3E-B996-44464EA9164D</string>
+			<string>EB98C87D6503FFC3C1279E95807AA0E8467FFD82</string>
 			<key>IDESourceControlWCCName</key>
 			<string>M13OrderedDictionary</string>
 		</dict>

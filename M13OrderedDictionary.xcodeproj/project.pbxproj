@@ -244,10 +244,13 @@
 		CAC534A0167D3EA900E66DFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NSOrderedDictionary/M13OrderedDictionary-Prefix.pch";
 				INFOPLIST_FILE = "NSOrderedDictionary/M13OrderedDictionary-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = M13OrderedDictionary;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -255,9 +258,11 @@
 		CAC534A1167D3EA900E66DFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NSOrderedDictionary/M13OrderedDictionary-Prefix.pch";
 				INFOPLIST_FILE = "NSOrderedDictionary/M13OrderedDictionary-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = M13OrderedDictionary;
 				WRAPPER_EXTENSION = app;
 			};

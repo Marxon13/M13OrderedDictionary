@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2012 Brandon McQuilkin
+ Copyright (c) 2014 Brandon McQuilkin
  
  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  
@@ -1238,12 +1238,13 @@
     NSMutableArray *testObj = [[NSMutableArray alloc] initWithArray:objects];
     NSMutableArray *testKey = [[NSMutableArray alloc] initWithArray:keys];
     //Loop through and find first identical object, and  add that key to the array. then delete that pair from the testers so they are not used again. (That way if there is an identical object with a diffrent key, it will get used.)
-    while (testObj.count > 0) {
+    while (testObj.count > 0 && tempObj.count > 0) {
         NSInteger index = [testObj indexOfObjectIdenticalTo:[tempObj objectAtIndex:(tempObj.count - testObj.count)]];
         [tempKey addObject:[testKey objectAtIndex:index]];
         [testKey removeObjectAtIndex:index];
         [testObj removeObjectAtIndex:index];
     }
+    
     return tempKey;
 }
 
