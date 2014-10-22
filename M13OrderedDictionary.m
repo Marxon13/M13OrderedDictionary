@@ -188,6 +188,11 @@
     return [NSDictionary dictionaryWithObjects:[objects objectsAtIndexes:indexes] forKeys:[keys objectsAtIndexes:indexes]];
 }
 
+- (NSDictionary *)unorderedDictionary
+{
+    return [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+}
+
 - (NSArray *)allKeys
 {
     return keys;
@@ -415,9 +420,9 @@
     return [keys objectsAtIndexes:[objects indexesOfObjectsAtIndexes:indexSet options:opts passingTest:predicate]];
 }
 
-#pragma mark - Preforming Selectors
+#pragma mark - Performing Selectors
 
-- (void)makeObjectsPreformSelector:(SEL)aSelector
+- (void)makeObjectsPerformSelector:(SEL)aSelector
 {
     [objects makeObjectsPerformSelector:aSelector];
 }
@@ -920,18 +925,13 @@
 
 - (void)insertObject:(id)object pairedWithKey:(id<NSCopying>)key atIndex:(NSUInteger)index
 {
-    NSInteger idx = 0;
     if ([pairs objectForKey:key] != nil) {
-        if (index < [self indexOfKey:key]) {
-            idx = index - 1;
-        } else {
-            idx = index;
-        }
         [self removeEntryWithKey:key];
     }
+    
     [pairs setObject:object forKey:key];
-    [keys insertObject:key atIndex:idx];
-    [objects insertObject:object atIndex:idx];
+    [keys insertObject:key atIndex:index];
+    [objects insertObject:object atIndex:index];
 }
 
 - (void)insertEntry:(NSDictionary *)entry atIndex:(NSUInteger)index

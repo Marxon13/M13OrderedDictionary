@@ -141,6 +141,9 @@
  @param indices The indices to retreive the entries from.
  @return The dictionary containing the entries at the given index set.*/
 - (NSDictionary *)unorderedEntriesAtIndices:(NSIndexSet *)indices;
+/**The dictionary containing all entries and all objects
+ @return The dictionary containing all entries and all objects*/
+- (NSDictionary *)unorderedDictionary;
 
 /**The ordered array of all keys in the ordered dictionary.
  @return The ordered array of all keys in the ordered dictionary.*/
@@ -325,10 +328,10 @@
  @return The keys of the passing objects.*/
 - (NSArray *)keysOfObjectsAtIndices:(NSIndexSet *)indexSet options:(NSEnumerationOptions)opts passingTest:(BOOL (^)(id obj, NSUInteger idx, BOOL *stop))predicate;
 
-/**@name Preforming Selectors*/
+/**@name Performing Selectors*/
 /**Sends to each object in the orderedDictionary the message identified by a given selector, starting with the first object and continuing through the array to the last object.
  @param aSelector The selector to make the objects perform.*/
-- (void)makeObjectsPreformSelector:(SEL)aSelector;
+- (void)makeObjectsPerformSelector:(SEL)aSelector;
 
 /**Sends the aSelector message to each object in the orderedDictionary, starting with the first object and continuing through the array to the last object.
  @param aSelector The selector to perform.
