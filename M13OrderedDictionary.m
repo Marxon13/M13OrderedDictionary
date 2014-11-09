@@ -16,32 +16,32 @@
 #pragma mark - Creation
 
 + (id)orderedDictionary{
-    return [[M13OrderedDictionary alloc] init];
+    return [[[self class] alloc] init];
 }
 
 + (id)orderedDictionaryWithOrderedDictionary:(M13OrderedDictionary *)orderedDictionary
 {
-    return [[M13OrderedDictionary alloc] initWithOrderedDictionary:orderedDictionary];
+    return [[[self class] alloc] initWithOrderedDictionary:orderedDictionary];
 }
 
 + (id)orderedDictionaryWithContentsOfFile:(NSString *)path
 {
-    return [[M13OrderedDictionary alloc] initWithContentsOfFile:path];
+    return [[[self class] alloc] initWithContentsOfFile:path];
 }
 
 + (id)orderedDictionaryWithContentsOfURL:(NSURL *)URL
 {
-    return [[M13OrderedDictionary alloc] initWithContentsOfURL:URL];
+    return [[[self class] alloc] initWithContentsOfURL:URL];
 }
 
 + (id)orderedDictionaryWithObject:(id)anObject pairedWithKey:(id<NSCopying>)aKey
 {
-    return [[M13OrderedDictionary alloc] initWithObjects:[NSArray arrayWithObject:anObject] pairedWithKeys:[NSArray arrayWithObject:aKey]];
+    return [[[self class] alloc] initWithObjects:[NSArray arrayWithObject:anObject] pairedWithKeys:[NSArray arrayWithObject:aKey]];
 }
 
 + (id)orderedDictionaryWithDictionary:(NSDictionary *)entrys
 {
-    return [[M13OrderedDictionary alloc] initWithContentsOfDictionary:entrys];
+    return [[[self class] alloc] initWithContentsOfDictionary:entrys];
 }
 
 #pragma mark - initialization
@@ -884,7 +884,7 @@
 
 + (id)orderedDictionaryWithCapacity:(NSUInteger)numEntrys
 {
-    return [[M13MutableOrderedDictionary alloc] initWithCapacity:numEntrys];
+    return [[[self class] alloc] initWithCapacity:numEntrys];
 }
 
 - (id)initWithCapacity:(NSUInteger)numEntrys
