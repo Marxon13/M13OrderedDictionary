@@ -1072,9 +1072,7 @@
 
 - (void)removeEntry:(NSDictionary *)entry
 {
-    if (entry.count > 0) {
-        [self removeEntryWithObject:[entry.allValues objectAtIndex:0] pairedWithKey:[entry.allKeys objectAtIndex:0]];
-    }
+    [self removeEntryWithObject:[entry.allValues objectAtIndex:0] pairedWithKey:[entry.allKeys objectAtIndex:0]];
 }
 
 - (void)removeEntryWithObject:(id)object inRange:(NSRange)range
