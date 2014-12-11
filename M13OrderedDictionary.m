@@ -1041,22 +1041,33 @@
 
 - (void)removeLastEntry
 {
-    [self removeEntryAtIndex:(keys.count - 1)];
+    if (keys.count > 0) {
+        [self removeEntryAtIndex:(keys.count - 1)];
+    }
 }
 
 - (void)removeEntryWithObject:(id)object
 {
-    [self removeEntryAtIndex:[self indexOfObject:object]];
+    NSUInteger index = [self indexOfObject:object];
+    if (index != NSNotFound) {
+        [self removeEntryAtIndex:index];
+    }
 }
 
 - (void)removeEntryWithKey:(id<NSCopying>)key
 {
-    [self removeEntryAtIndex:[self indexOfKey:key]];
+    NSUInteger index = [self indexOfKey:key];
+    if (index != NSNotFound) {
+        [self removeEntryAtIndex:index];
+    }
 }
 
 - (void)removeEntryWithObject:(id)object pairedWithKey:(id<NSCopying>)key
 {
-    [self removeEntryAtIndex:[self indexOfEntryWithObject:object pairedWithKey:key]];
+    NSUInteger index = [self indexOfEntryWithObject:object pairedWithKey:key];
+    if (index != NSNotFound) {
+        [self removeEntryAtIndex:index];
+    }
 }
 
 - (void)removeEntry:(NSDictionary *)entry
@@ -1066,22 +1077,34 @@
 
 - (void)removeEntryWithObject:(id)object inRange:(NSRange)range
 {
-    [self removeEntryAtIndex:[self indexOfObject:object inRange:range]];
+    NSUInteger index = [self indexOfObject:object inRange:range];
+    if (index != NSNotFound) {
+        [self removeEntryAtIndex:index];
+    }
 }
 
 - (void)removeEntryWithKey:(id<NSCopying>)key inRange:(NSRange)range
 {
-    [self removeEntryAtIndex:[self indexOfKey:key inRange:range]];
+    NSUInteger index = [self indexOfKey:key inRange:range];
+    if (index != NSNotFound) {
+        [self removeEntryAtIndex:index];
+    }
 }
 
-- (void)removeEntryWithObject:(id)object pairedWithKey:(id<NSCopying>)key inRange:(NSRange)ramge
+- (void)removeEntryWithObject:(id)object pairedWithKey:(id<NSCopying>)key inRange:(NSRange)range
 {
-    [self removeEntryAtIndex:[self indexOfEntryWithObject:object pairedWithKey:key inRange:ramge]];
+    NSUInteger index = [self indexOfEntryWithObject:object pairedWithKey:key inRange:range];
+    if (index != NSNotFound) {
+        [self removeEntryAtIndex:index];
+    }
 }
 
 - (void)removeEntry:(NSDictionary *)entry inRange:(NSRange)range
 {
-    [self removeEntryAtIndex:[self indexOfEntry:entry inRange:range]];
+    NSUInteger index = [self indexOfEntry:entry inRange:range];
+    if (index != NSNotFound) {
+        [self removeEntryAtIndex:index];
+    }
 }
 
 - (void)removeEntryAtIndex:(NSUInteger)index
@@ -1102,12 +1125,18 @@
 
 - (void)removeEntryWithObjectIdenticalTo:(id)anObject
 {
-    [self removeEntryAtIndex:[self indexOfObjectIdenticalTo:anObject]];
+    NSUInteger index = [self indexOfObjectIdenticalTo:anObject];
+    if (index != NSNotFound) {
+        [self removeEntryAtIndex:index];
+    }
 }
 
 - (void)removeEntryWithObjectIdenticalTo:(id)anObject inRange:(NSRange)range
 {
-    [self removeEntryAtIndex:[self indexOfObjectIdenticalTo:anObject inRange:range]];
+    NSUInteger index = [self indexOfObjectIdenticalTo:anObject inRange:range];
+    if (index != NSNotFound) {
+        [self removeEntryAtIndex:index];
+    }
 }
 
 - (void)removeEntriesWithObjectsInArray:(NSArray *)array
