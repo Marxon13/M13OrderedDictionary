@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "M13OrderedDictionary"
-  s.version      = "1.0.5"
+  s.version      = "1.0.6"
   s.summary      = "A cross between NSArray and NSDictionary. It holds an ordered list of objects and keys."
 
   s.description  = <<-DESC
