@@ -100,17 +100,17 @@
 
 /**The number of entries in the orderedDictionary
  @return The number of entries in the orderedDictionary.*/
-- (NSUInteger)count;
+@property (nonatomic, readonly) NSUInteger count;
 
 /**The object with the highest index value.
  @return The object with the highest index value.*/
-- (id)lastObject;
+@property (nonatomic, readonly) id lastObject;
 /**The key with the highest index value.
  @return The key with the highest index value.*/
-- (id<NSCopying>)lastKey;
+@property (nonatomic, readonly) id<NSCopying> lastKey;
 /**Returns the object key pair with the highest index value.
  @return The object key pair with the highest index value.*/
-- (NSDictionary *)lastEntry;
+@property (nonatomic, readonly) NSDictionary *lastEntry;
 
 /**The object located at the given index.
  @param index The index to retreive the object from.
@@ -143,14 +143,14 @@
 - (NSDictionary *)unorderedEntriesAtIndices:(NSIndexSet *)indices;
 /**The dictionary containing all entries and all objects
  @return The dictionary containing all entries and all objects*/
-- (NSDictionary *)unorderedDictionary;
+@property (nonatomic, readonly) NSDictionary *unorderedDictionary;
 
 /**The ordered array of all keys in the ordered dictionary.
  @return The ordered array of all keys in the ordered dictionary.*/
-- (NSArray *)allKeys;
+@property (nonatomic, readonly) NSArray *allKeys;
 /**The ordered array of all objects in the ordered dictionary.
  @return The ordered array of all objects in the ordered dictionary.*/
-- (NSArray *)allObjects;
+@property (nonatomic, readonly) NSArray *allObjects;
 /**The array containing the keys corresponding to all occurrences of a given object in the ordered dictionary.
  @param anObject The object to check for.
  @return The array containing the keys corresponding to all occurrences of a given object in the ordered dictionary.*/
@@ -168,24 +168,24 @@
 /**@name Enumeration*/
 /** The enumerator that lets you access each object in the ordered dictionary.
  @return The enumerator that lets you access each object in the ordered dictionary.*/
-- (NSEnumerator *)objectEnumerator;
+@property (nonatomic, readonly) NSEnumerator *objectEnumerator;
 /** The enumerator that lets you access each key in the ordered dictionary.
  @return The enumerator that lets you access each key in the ordered dictionary.*/
-- (NSEnumerator *)keyEnumerator;
+@property (nonatomic, readonly) NSEnumerator *keyEnumerator;
 /** The enumerator that lets you access each entry in the ordered dictionary.
  @return The enumerator that lets you access each entry in the ordered dictionary.
  @note The enumerator goes through an ordered array of dictionarys with one key-value pair.*/
-- (NSEnumerator *)entryEnumerator;
+@property (nonatomic, readonly) NSEnumerator *entryEnumerator;
 /** The enumerator that lets you access each object in the ordered dictionary in reverse.
  @return The enumerator that lets you access each object in the ordered dictionary in reverse.*/
-- (NSEnumerator *)reverseObjectEnumerator;
+@property (nonatomic, readonly) NSEnumerator *reverseObjectEnumerator;
 /** The enumerator that lets you access each key in the ordered dictionary in reverse.
  @return The enumerator that lets you access each key in the ordered dictionary in reverse.*/
-- (NSEnumerator *)reverseKeyEnumerator;
+@property (nonatomic, readonly) NSEnumerator *reverseKeyEnumerator;
 /** The enumerator that lets you access each entry in the ordered dictionary in reverse.
  @return The enumerator that lets you access each entry in the ordered dictionary in reverse.
  @note The enumerator goes through an ordered array of dictionarys with one key-value pair.*/
-- (NSEnumerator *)reverseEntryEnumerator;
+@property (nonatomic, readonly) NSEnumerator *reverseEntryEnumerator;
 
 /**@name Searching*/
 /**The lowest index whose object is equal to the given object.
@@ -400,10 +400,10 @@
 /**@name Sorting*/
 /**Analyzes the ordered Dictionary and returns a hint that speeds the sorting of the objects when the hint is supplied to sorted______UsingFunction:context:hint:.
  @return A hint that speeds the sorting of the objects when the hint is supplied to sorted______UsingFunction:context:hint:.*/
-- (NSData *)sortedObjectsHint;
+@property (nonatomic, readonly) NSData *sortedObjectsHint;
 /**Analyzes the ordered Dictionary and returns a hint that speeds the sorting of the keys when the hint is supplied to sorted______UsingFunction:context:hint:.
  @return A hint that speeds the sorting of the keys when the hint is supplied to sorted______UsingFunction:context:hint:.*/
-- (NSData *)sortedKeysHint;
+@property (nonatomic, readonly) NSData *sortedKeysHint;
 
 /**Returns a new orderedDictionary that lists the receiving orderedDictionary objects in ascending order as defined by the comparison function comparator.
  @param comparator The comparator to perform the sorting operation with.
@@ -471,7 +471,7 @@
 /**@name Descriptions*/
 /**Returns the contents formatted as a property list.
  @return The contents formatted as a property list.*/
-- (NSString *)description;
+@property (nonatomic, readonly) NSString *description;
 /**Returns the contents formatted as a property list.
  @param locale The local to format the property list with.
  @return The contents formatted as a property list.*/
