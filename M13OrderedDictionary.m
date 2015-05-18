@@ -990,7 +990,7 @@
         [pairs setObject:object forKey:aKey];
         [objects replaceObjectAtIndex:[self indexOfKey:aKey] withObject:object];
     } else {
-        [self insertObject:object pairedWithKey:keys atIndex:index];
+        [self insertObject:object pairedWithKey:aKey atIndex:index];
     }
 }
 
