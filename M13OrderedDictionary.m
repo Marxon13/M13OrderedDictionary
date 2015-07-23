@@ -514,7 +514,6 @@
     while (i < tempObj.count && j < keys.count) {
         if ([[tempObj objectAtIndex:i] isEqual:[objects objectAtIndex:j]]) {
             [tempKey addObject:[keys objectAtIndex:j]];
-            j++;
             i++;
         }
         j++;
