@@ -36,7 +36,8 @@
 
 + (id)orderedDictionaryWithObject:(id)anObject pairedWithKey:(id<NSCopying>)aKey
 {
-    return [[[self class] alloc] initWithObjects:[NSArray arrayWithObject:anObject] pairedWithKeys:[NSArray arrayWithObject:aKey]];
+    return [[[self class] alloc] initWithObjects:[NSArray arrayWithObject:anObject]
+                                  pairedWithKeys:[NSArray arrayWithObject:aKey]];
 }
 
 + (id)orderedDictionaryWithDictionary:(NSDictionary *)entrys
@@ -46,66 +47,50 @@
 
 #pragma mark - initialization
 
-- (id)init
+- (instancetype)init
 {
-    self = [super init];
-    if (self != nil) {
-        keys = [[NSMutableArray alloc] init];
-        objects = [[NSMutableArray alloc] init];
-        pairs = [[NSMutableDictionary alloc] init];
-    }
-    return self;
+    return [self initWithObjects:[[NSMutableArray alloc] init] pairedWithKeys:[[NSMutableArray alloc] init]];
 }
 
-- (id)initWithOrderedDictionary:(M13OrderedDictionary *)orderedDictionary
+- (instancetype)initWithOrderedDictionary:(M13OrderedDictionary *)orderedDictionary
 {
     return [self initWithOrderedDictionary:orderedDictionary copyEntries:NO];
 }
 
-- (id)initWithOrderedDictionary:(M13OrderedDictionary *)orderedDictionary copyEntries:(BOOL)flag
+- (instancetype)initWithOrderedDictionary:(M13OrderedDictionary *)orderedDictionary copyEntries:(BOOL)flag
 {
-    self = [super init];
-    if (self != nil) {
-        keys = [[NSMutableArray alloc] initWithArray:orderedDictionary.allKeys copyItems:flag];
-        objects = [[NSMutableArray alloc] initWithArray:orderedDictionary.allObjects copyItems:flag];
-        pairs = [[NSMutableDictionary alloc] initWithObjects:objects forKeys:keys];
-    }
-    return self;
+    NSArray *_keys = [[NSMutableArray alloc] initWithArray:orderedDictionary.allKeys copyItems:flag];
+    NSArray *_objects = [[NSMutableArray alloc] initWithArray:orderedDictionary.allObjects copyItems:flag];
+    return [self initWithObjects:_objects pairedWithKeys:_keys];
 }
 
-- (id)initWithContentsOfFile:(NSString *)path
+- (instancetype)initWithContentsOfFile:(NSString *)path
 {
     NSDictionary *rawData = [NSDictionary dictionaryWithContentsOfFile:path];
     return [self initWithObjects:[rawData objectForKey:@"Objects"] pairedWithKeys:[rawData objectForKey:@"Keys"]];
 }
 
-- (id)initWithContentsOfURL:(NSURL *)URL
+- (instancetype)initWithContentsOfURL:(NSURL *)URL
 {
     NSDictionary *rawData = [NSDictionary dictionaryWithContentsOfURL:URL];
     return [self initWithObjects:[rawData objectForKey:@"Objects"] pairedWithKeys:[rawData objectForKey:@"Keys"]];
 }
 
-- (id)initWithContentsOfDictionary:(NSDictionary *)entrys
+- (instancetype)initWithContentsOfDictionary:(NSDictionary *)entries
 {
-    self = [super init];
-    if (self != nil) {
-        keys = [[NSMutableArray alloc] initWithArray:entrys.allKeys];
-        objects = [[NSMutableArray alloc] init];
-        //Must loop through all keys, since order from NSDictionary is not defined.
-        for (id key in keys) {
-            [objects addObject:[entrys objectForKey:key]];
-        }
-        pairs = [[NSMutableDictionary alloc] initWithObjects:objects forKeys:keys];
+    NSArray *_keys = [[NSMutableArray alloc] initWithArray:entries.allKeys];
+    NSMutableArray *_objects = [[NSMutableArray alloc] initWithCapacity:_keys.count];
+    for (id key in _keys) {
+        [_objects addObject:[entries objectForKey:key]];
     }
-    return self;
+    return [self initWithObjects:_objects pairedWithKeys:_keys];
 }
 
-- (id)initWithObjects:(NSArray *)orderedObjects pairedWithKeys:(NSArray *)orderedKeys
+- (instancetype)initWithObjects:(NSArray *)orderedObjects pairedWithKeys:(NSArray *)orderedKeys
 {
     NSAssert(orderedObjects.count == orderedKeys.count, @"The amount of objects does not match the number of keys");
     NSAssert([[NSSet setWithArray:orderedKeys] count] == orderedKeys.count, @"There are duplicate keys on initialization");
-    self = [super init];
-    if (self != nil) {
+    if (self = [super init]) {
         keys = [[NSMutableArray alloc] initWithArray:orderedKeys];
         objects = [[NSMutableArray alloc] initWithArray:orderedObjects];
         pairs = [[NSMutableDictionary alloc] initWithObjects:objects forKeys:keys];
@@ -135,7 +120,7 @@
 
 - (NSUInteger)count
 {
-    return [keys count];
+    return keys.count;
 }
 
 - (id)lastObject
@@ -150,7 +135,7 @@
 
 - (NSDictionary *)lastEntry
 {
-    return [NSDictionary dictionaryWithObject:objects.lastObject forKey:keys.lastObject];
+    return self.count ? [NSDictionary dictionaryWithObject:objects.lastObject forKey:keys.lastObject] : nil;
 }
 
 - (id)objectAtIndex:(NSUInteger)index
@@ -337,7 +322,8 @@
 
 - (id<NSCopying>)keyOfObjectIdenticalTo:(id)object
 {
-    return [keys objectAtIndex:[objects indexOfObjectIdenticalTo:object]];
+    NSUInteger index = [objects indexOfObjectIdenticalTo:object];
+    return index != NSNotFound ? [keys objectAtIndex:index] : nil;
 }
 
 - (NSUInteger)indexOfObjectIdenticalTo:(id)object inRange:(NSRange)range
@@ -347,7 +333,8 @@
 
 - (id<NSCopying>)keyOfObjectIdenticalTo:(id)object inRange:(NSRange)range
 {
-    return [keys objectAtIndex:[objects indexOfObjectIdenticalTo:object inRange:range]];
+    NSUInteger index = [objects indexOfObjectIdenticalTo:object inRange:range];
+    return index != NSNotFound ? [keys objectAtIndex:index] : nil;
 }
 
 - (NSUInteger)indexOfObjectPassingTest:(BOOL (^)(id, NSUInteger, BOOL *))predicate
@@ -357,7 +344,8 @@
 
 - (id<NSCopying>)keyOfObjectPassingTest:(BOOL (^)(id, NSUInteger, BOOL *))predicate
 {
-    return [keys objectAtIndex:[objects indexOfObjectPassingTest:predicate]];
+    NSUInteger index = [objects indexOfObjectPassingTest:predicate];
+    return index != NSNotFound ? [keys objectAtIndex:index] : nil;
 }
 
 - (NSUInteger)indexOfObjectWithOptions:(NSEnumerationOptions)opts passingTest:(BOOL (^)(id, NSUInteger, BOOL *))predicate
@@ -367,7 +355,8 @@
 
 - (id<NSCopying>)keyOfObjectWithOptions:(NSEnumerationOptions)opts passingTest:(BOOL (^)(id, NSUInteger, BOOL *))predicate
 {
-    return [keys objectAtIndex:[objects indexOfObjectWithOptions:opts passingTest:predicate]];
+    NSUInteger index = [objects indexOfObjectWithOptions:opts passingTest:predicate];
+    return index != NSNotFound ? [keys objectAtIndex:index] : nil;
 }
 
 - (NSUInteger)indexOfObjectAtIndices:(NSIndexSet *)indexSet options:(NSEnumerationOptions)opts passingTest:(BOOL (^)(id, NSUInteger, BOOL *))predicate
@@ -377,7 +366,8 @@
 
 - (id<NSCopying>)keyOfObjectAtIndices:(NSIndexSet *)indexSet options:(NSEnumerationOptions)opts passingTest:(BOOL (^)(id, NSUInteger, BOOL *))predicate
 {
-    return [keys objectAtIndex:[objects indexOfObjectAtIndexes:indexSet options:opts passingTest:predicate]];
+    NSUInteger index = [objects indexOfObjectAtIndexes:indexSet options:opts passingTest:predicate];
+    return index != NSNotFound ? [keys objectAtIndex:index] : nil;
 }
 
 - (NSUInteger)indexOfObject:(id)object inSortedRange:(NSRange)r options:(NSBinarySearchingOptions)opts usingComparator:(NSComparator)cmp
@@ -387,7 +377,8 @@
 
 - (id<NSCopying>)keyOfObject:(id)object inSortedRange:(NSRange)r options:(NSBinarySearchingOptions)opts usingComparator:(NSComparator)cmp
 {
-    return [keys objectAtIndex:[object indexOfObject:object inSortedRange:r options:opts usingComparator:cmp]];
+    NSUInteger index = [object indexOfObject:object inSortedRange:r options:opts usingComparator:cmp];
+    return index != NSNotFound ? [keys objectAtIndex:index] : nil;
 }
 
 - (NSIndexSet *)indicesOfObjectsPassingTest:(BOOL (^)(id, NSUInteger, BOOL *))predicate
@@ -1362,7 +1353,7 @@
     objects = [tempObj mutableCopy];
 }
 
-- (void)sortEntriesByKeysUsingFunction:(NSInteger (*)(__strong id, __strong id, void *))compare context:(void *)context
+- (void)sortEntriesByKeysUsingFunction:(NSInteger (*)(__strong id<NSCopying>, __strong id<NSCopying>, void *))compare context:(void *)context
 {
     NSArray *tempKey = [keys sortedArrayUsingFunction:compare context:context];
     NSArray *tempObj = [self objectsForSortedKeys:tempKey];
