@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "M13OrderedDictionary"
-  s.version      = "1.0.6"
+  s.version      = "1.1.0"
   s.summary      = "A cross between NSArray and NSDictionary. It holds an ordered list of objects and keys."
 
   s.description  = <<-DESC
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
   s.license      = {:type => 'MIT',
                     :text => <<-LICENSE
- Copyright (c) 2013 Brandon McQuilkin
+ Copyright (c) 2015 Brandon McQuilkin
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the
 "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to
@@ -27,7 +27,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     LICENSE
  }
 
-  s.author       = { "Brandon McQuilkin" => "marxon13@yahoo.com" }
+  s.author       = { "Brandon McQuilkin" => "brandon.mcquilkin@gmail.com" }
 
   s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.7'
