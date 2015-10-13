@@ -107,10 +107,7 @@
 
 - (BOOL)containsObject:(id)object pairedWithKey:(id<NSCopying>)key
 {
-    if ([objects containsObject:object] && [keys containsObject:key]) {
-        return YES;
-    }
-    return NO;
+    return [objects containsObject:object] && [keys containsObject:key];
 }
 
 - (BOOL)containsEntry:(NSDictionary *)entry

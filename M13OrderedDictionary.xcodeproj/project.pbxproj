@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FEA1B9471BCCE56100ABB2EC /* M13OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA1B9461BCCE56100ABB2EC /* M13OrderedDictionaryTests.swift */; };
+		FEA1B9471BCCE56100ABB2EC /* SearchingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA1B9461BCCE56100ABB2EC /* SearchingTests.swift */; };
 		FEA1B94E1BCCE5C700ABB2EC /* M13OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA1B94D1BCCE5C700ABB2EC /* M13OrderedDictionary.m */; settings = {ASSET_TAGS = (); }; };
 		FEA1B94F1BCCE5E400ABB2EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA1B92D1BCCE51600ABB2EC /* main.m */; settings = {ASSET_TAGS = (); }; };
 		FEA1B9501BCCE62A00ABB2EC /* M13OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA1B94D1BCCE5C700ABB2EC /* M13OrderedDictionary.m */; settings = {ASSET_TAGS = (); }; };
@@ -41,7 +41,7 @@
 		FEA1B92A1BCCE51600ABB2EC /* M13OrderedDictionary */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = M13OrderedDictionary; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA1B92D1BCCE51600ABB2EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEA1B9441BCCE56100ABB2EC /* M13OrderedDictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M13OrderedDictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEA1B9461BCCE56100ABB2EC /* M13OrderedDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M13OrderedDictionaryTests.swift; sourceTree = "<group>"; };
+		FEA1B9461BCCE56100ABB2EC /* SearchingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingTests.swift; sourceTree = "<group>"; };
 		FEA1B9481BCCE56100ABB2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEA1B94C1BCCE5C700ABB2EC /* M13OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13OrderedDictionary.h; sourceTree = SOURCE_ROOT; };
 		FEA1B94D1BCCE5C700ABB2EC /* M13OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13OrderedDictionary.m; sourceTree = SOURCE_ROOT; };
@@ -100,10 +100,9 @@
 		FEA1B9451BCCE56100ABB2EC /* M13OrderedDictionaryTests */ = {
 			isa = PBXGroup;
 			children = (
-				FEA1B95C1BCCF68300ABB2EC /* M13TestHelpers.h */,
-				FEA1B95D1BCCF68300ABB2EC /* M13TestHelpers.m */,
-				FEA1B9461BCCE56100ABB2EC /* M13OrderedDictionaryTests.swift */,
+				FEA1B9461BCCE56100ABB2EC /* SearchingTests.swift */,
 				FEA1B9581BCCEFF300ABB2EC /* QueryingTests.m */,
+				FEA1B95F1BCD3F0B00ABB2EC /* Helpers */,
 				FEA1B9541BCCE69B00ABB2EC /* Supporting Files */,
 			);
 			name = M13OrderedDictionaryTests;
@@ -117,6 +116,15 @@
 				FEA1B9551BCCE6E400ABB2EC /* M13OrderedDictionaryTests-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FEA1B95F1BCD3F0B00ABB2EC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FEA1B95C1BCCF68300ABB2EC /* M13TestHelpers.h */,
+				FEA1B95D1BCCF68300ABB2EC /* M13TestHelpers.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,7 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEA1B9471BCCE56100ABB2EC /* M13OrderedDictionaryTests.swift in Sources */,
+				FEA1B9471BCCE56100ABB2EC /* SearchingTests.swift in Sources */,
 				FEA1B9591BCCEFF300ABB2EC /* QueryingTests.m in Sources */,
 				FEA1B9501BCCE62A00ABB2EC /* M13OrderedDictionary.m in Sources */,
 				FEA1B95E1BCCF68300ABB2EC /* M13TestHelpers.m in Sources */,

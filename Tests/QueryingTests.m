@@ -37,7 +37,8 @@
     NSArray<NSNumber *> *objects = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12];
     NSAssert(keys.count == objects.count, @"The number of keys and objects are not the same.");
 
-    NSIndexSet *indexSetOfExpectedItems = RandomIndexSet((int)keys.count);
+    NSIndexSet *indexSetOfExpectedItems;
+    while ((indexSetOfExpectedItems = RandomIndexSet((int)keys.count-1)).count == 0);
     _expectedCount = indexSetOfExpectedItems.count;
     _expectedKeys = [keys objectsAtIndexes:indexSetOfExpectedItems];
     _expectedObjects = [objects objectsAtIndexes:indexSetOfExpectedItems];
@@ -50,11 +51,8 @@
     }
 
     {
-        NSUInteger i;
-        do {
-            i = arc4random_uniform((int)keys.count);
-        } while ([indexSetOfExpectedItems containsIndex:i]);
-
+        NSUInteger i = 0;
+        while ([indexSetOfExpectedItems containsIndex:(i = arc4random_uniform((int)keys.count))]);
         _expectedNotContainedKey = keys[i];
         _expectedNotContainedObject = objects[i];
         _expectedNotContainedEntry = @{_expectedNotContainedKey: _expectedNotContainedObject};
