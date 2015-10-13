@@ -69,6 +69,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#pragma mark - Immutable Ordered Dictionary
+
 /**A cross between NSDictionary and NSArray.
  @note Terminolgy:
  Entry - refers to an object-key pair.
@@ -83,6 +85,9 @@ NS_ASSUME_NONNULL_BEGIN
     NSMutableArray M13Generics(ObjectType) *objects;
     NSMutableDictionary M13Generics(KeyType, ObjectType) *pairs;
 }
+
+#pragma mark - Creation
+
 /**@name Creation*/
 /**Creates a new M13OrderedDictionary object.
  @return A M13OrderedDictionary object.*/
@@ -144,6 +149,8 @@ NS_ASSUME_NONNULL_BEGIN
  @return A M13OrderedDictionary object.*/
 - (instancetype)initWithObjects:(NSArray M13Generics(ObjectType) *)orderedObjects
                  pairedWithKeys:(NSArray M13Generics(KeyType) *)orderedKeys NS_DESIGNATED_INITIALIZER;
+
+#pragma mark - Querying
 
 /**@name Querying*/
 /**Check to see if a given object is in the ordered dictionary.
@@ -229,6 +236,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray M13Generics(ObjectType) *)objectForKeys:(NSArray M13Generics(KeyType) *)keys
                                     notFoundMarker:(M13GenericType(ObjectType, id))anObject;
 
+#pragma mark - Enumeration
+
 /**@name Enumeration*/
 /** The enumerator that lets you access each object in the ordered dictionary.
  @return The enumerator that lets you access each object in the ordered dictionary.*/
@@ -250,6 +259,8 @@ NS_ASSUME_NONNULL_BEGIN
  @return The enumerator that lets you access each entry in the ordered dictionary in reverse.
  @note The enumerator goes through an ordered array of dictionarys with one key-value pair.*/
 @property (nonatomic, readonly) NSEnumerator M13Generics(NSDictionary<KeyType, ObjectType> *) *reverseEntryEnumerator;
+
+#pragma mark - Searching
 
 /**@name Searching*/
 /**The lowest index whose object is equal to the given object.
@@ -433,6 +444,8 @@ NS_ASSUME_NONNULL_BEGIN
                                                                    NSUInteger idx,
                                                                    BOOL *stop))predicate;
 
+#pragma mark - Performing Selectors
+
 /**@name Performing Selectors*/
 /**Sends to each object in the orderedDictionary the message identified by a given selector, starting with the first object and continuing through the array to the last object.
  @param aSelector The selector to make the objects perform.*/
@@ -461,6 +474,8 @@ NS_ASSUME_NONNULL_BEGIN
                           options:(NSEnumerationOptions)opts
                        usingBlock:(void (^)(M13GenericType(ObjectType, id) obj, NSUInteger idx, BOOL *stop))block;
 
+#pragma mark - Comparing
+
 /**@name Comparing*/
 /**Returns the first object contained in the receiving orderedDictionary that’s equal to an object in the given ordered dictionary.
  @param orderedDictionary The orderedDictionary to compare to.
@@ -479,6 +494,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param otherOrderedDictionary The ordered dictionary to compare to.
  @return Wether or not the two ordered dictionaries are equal.*/
 - (BOOL)isEqualToOrderedDictionary:(M13OrderedDictionary *)otherOrderedDictionary;
+
+#pragma mark - Deriving
 
 /**@name Deriving*/
 /**Duplicate the ordered dictionary and add an entry to it.
@@ -506,6 +523,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param range The range to retreive entries from.
  @return The receiving orderedDictionary's elements that fall within the limits specified by the given range.*/
 - (M13OrderedDictionary M13Generics(KeyType, ObjectType) *)subOrderedDictionaryWithRange:(NSRange)range;
+
+#pragma mark - Sorting
 
 /**@name Sorting*/
 /**Analyzes the ordered Dictionary and returns a hint that speeds the sorting of the objects when the hint is supplied to sorted______UsingFunction:context:hint:.
@@ -592,6 +611,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return An orderedDictionary that lists the receiving orderedDictionary's keys in ascending order, as determined by the comparison method specified by a given NSComparator Block.*/
 - (M13OrderedDictionary M13Generics(KeyType, ObjectType) *)sortedByKeysWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr;
 
+#pragma mark - Descriptions
 
 /**@name Descriptions*/
 /**Returns the contents formatted as a property list.
@@ -614,6 +634,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param aURL The URL to write the file to.
  @param flag Wether or not to write atimically.*/
 - (BOOL)writeToURL:(NSURL *)aURL atomically:(BOOL)flag;
+
+#pragma mark - Key Value Observing
 
 /**@name Key Value Observing*/
 /**Registers an observer to receive key value observer notifications for the specified key-path relative to the objects at the indices.
@@ -656,6 +678,8 @@ NS_ASSUME_NONNULL_BEGIN
  @return A value to the object whos key is the first key in the key path.*/
 - (id)valueForKeyPath:(NSString *)keyPath;
 
+#pragma mark - NSCoding
+
 /**@name NSCoding*/
 /**Encode the ordered dictionary with the given coder.
  @param aCoder The coder to encode the ordered dictionary with.*/
@@ -664,6 +688,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param decoder The decoder to initalize the ordered dictionary with.
  @return A M13OrderedDictionary.*/
 - (id)initWithCoder:(NSCoder *)decoder;
+
+#pragma mark - NSCopying
 
 /**@name NSCopying*/
 /**Returns a copy of the ordered dictionary.
@@ -681,9 +707,13 @@ NS_ASSUME_NONNULL_BEGIN
  @return A copy of the ordered dictionary.*/
 - (id)mutableCopyWithZone:(NSZone *)zone;
 
+#pragma mark - NSFastEnumeration
+
 /************ NSFastEnumeration ************/
 //Cannot figure out how to implement this, in this way without incuring excessive overhead by creating the array of dictionarys each time. Not sure where to put code to create array on the first run, and delete on the last run.
 //- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id *)stackbuf count:(NSUInteger)len; //Will only produce NSDictionarys with single object-key pairs. If you need to iterate over only the objects and keys, use "allKeys" and "allObjects".
+
+#pragma mark - Indexed Subscripts
 
 /**@name Indexed Subscripts*/
 /**Returns the object at the given indexed subscript.
@@ -697,8 +727,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+#pragma mark - Mutable Ordered Dictionary
+
 /**A mutable version of M13OrderedDictionary*/
 @interface M13MutableOrderedDictionary M13Generics(__covariant KeyType: id<NSCopying>, __covariant ObjectType) : M13OrderedDictionary M13Generics(KeyType, ObjectType)
+
+#pragma mark - Creation
 
 /**@name Creation and Initalization*/
 /**Create the mutable ordered dictionary with the given capacity.
@@ -709,6 +743,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param The capacity of the ordered dictionary.
  @return A M13MutableOrderedDictionary object.*/
 - (id)initWithCapacity:(NSUInteger)numEntries;
+
+#pragma mark - Adding Objects
 
 /**@name Adding Objects*/
 /**Add the entry at the end of the orderedDictionary. If the key exists, its entry will be deleted, before the entry is added.
@@ -775,7 +811,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param index The index to insert the entries if the key for an entry does not exist.*/
 - (void)setEntriesFromDictionary:(NSDictionary M13Generics(KeyType, ObjectType) *)dictionary atIndex:(NSUInteger)index;
 
-
+#pragma mark - Removing Objects
 
 /**@name Removing Objects*/
 
@@ -850,6 +886,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**Remove the entries in the given range.
  @param range The range of objects to remove.*/
 - (void)removeEntriesInRange:(NSRange)range;
+
+#pragma mark - Replacing Objects
 
 /**@name Replacing Objects*/
 /**Replace the entry at the given index with the given entry.
@@ -931,10 +969,14 @@ withEntriesFromOrderedDictionary:(M13OrderedDictionary M13Generics(KeyType, Obje
  @param orderedDictionary The new entries.*/
 - (void)setEntriesToOrderedDictionary:(M13OrderedDictionary M13Generics(KeyType, ObjectType) *)orderedDictionary;
 
+#pragma mark - Filtering Content
+
 /**@name Filtering Content*/
 /**Filter the ordered dictionary by removing objects that do not pass the predicate.
  @param predicate The predicate filter.*/
 - (void)filterEntriesUsingPredicateForObjects:(NSPredicate *)predicate;
+
+#pragma mark - Rearranging Content
 
 /**@name Rearranging Content*/
 /**Exchange the entry at the first index with the entry at the second index.
