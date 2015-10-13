@@ -7,99 +7,106 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA0F92881896BC2A0034DCB3 /* M13OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0F92871896BC2A0034DCB3 /* M13OrderedDictionary.m */; };
-		CAC53486167D3EA900E66DFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC53485167D3EA900E66DFC /* UIKit.framework */; };
-		CAC53488167D3EA900E66DFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC53487167D3EA900E66DFC /* Foundation.framework */; };
-		CAC5348A167D3EA900E66DFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC53489167D3EA900E66DFC /* CoreGraphics.framework */; };
-		CAC53490167D3EA900E66DFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAC5348E167D3EA900E66DFC /* InfoPlist.strings */; };
-		CAC53492167D3EA900E66DFC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC53491167D3EA900E66DFC /* main.m */; };
-		CAC53496167D3EA900E66DFC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC53495167D3EA900E66DFC /* AppDelegate.m */; };
-		CAC53498167D3EA900E66DFC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC53497167D3EA900E66DFC /* Default.png */; };
-		CAC5349A167D3EA900E66DFC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC53499167D3EA900E66DFC /* Default@2x.png */; };
-		CAC5349C167D3EA900E66DFC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC5349B167D3EA900E66DFC /* Default-568h@2x.png */; };
+		FEA1B9471BCCE56100ABB2EC /* M13OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA1B9461BCCE56100ABB2EC /* M13OrderedDictionaryTests.swift */; };
+		FEA1B94E1BCCE5C700ABB2EC /* M13OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA1B94D1BCCE5C700ABB2EC /* M13OrderedDictionary.m */; settings = {ASSET_TAGS = (); }; };
+		FEA1B94F1BCCE5E400ABB2EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA1B92D1BCCE51600ABB2EC /* main.m */; settings = {ASSET_TAGS = (); }; };
+		FEA1B9501BCCE62A00ABB2EC /* M13OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA1B94D1BCCE5C700ABB2EC /* M13OrderedDictionary.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FEA1B9561BCCE85B00ABB2EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEA1B9221BCCE51600ABB2EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEA1B9291BCCE51600ABB2EC;
+			remoteInfo = M13OrderedDictionary;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FEA1B9281BCCE51600ABB2EC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		CA0F92861896BC2A0034DCB3 /* M13OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13OrderedDictionary.h; sourceTree = SOURCE_ROOT; };
-		CA0F92871896BC2A0034DCB3 /* M13OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13OrderedDictionary.m; sourceTree = SOURCE_ROOT; };
-		CAC53481167D3EA900E66DFC /* M13OrderedDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M13OrderedDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAC53485167D3EA900E66DFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		CAC53487167D3EA900E66DFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		CAC53489167D3EA900E66DFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CAC5348D167D3EA900E66DFC /* M13OrderedDictionary-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "M13OrderedDictionary-Info.plist"; sourceTree = "<group>"; };
-		CAC5348F167D3EA900E66DFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CAC53491167D3EA900E66DFC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CAC53493167D3EA900E66DFC /* M13OrderedDictionary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "M13OrderedDictionary-Prefix.pch"; sourceTree = "<group>"; };
-		CAC53494167D3EA900E66DFC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		CAC53495167D3EA900E66DFC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CAC53497167D3EA900E66DFC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		CAC53499167D3EA900E66DFC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		CAC5349B167D3EA900E66DFC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FEA1B92A1BCCE51600ABB2EC /* M13OrderedDictionary */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = M13OrderedDictionary; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEA1B92D1BCCE51600ABB2EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FEA1B9441BCCE56100ABB2EC /* M13OrderedDictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M13OrderedDictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEA1B9461BCCE56100ABB2EC /* M13OrderedDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M13OrderedDictionaryTests.swift; sourceTree = "<group>"; };
+		FEA1B9481BCCE56100ABB2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA1B94C1BCCE5C700ABB2EC /* M13OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13OrderedDictionary.h; sourceTree = SOURCE_ROOT; };
+		FEA1B94D1BCCE5C700ABB2EC /* M13OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13OrderedDictionary.m; sourceTree = SOURCE_ROOT; };
+		FEA1B9551BCCE6E400ABB2EC /* M13OrderedDictionaryTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "M13OrderedDictionaryTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CAC5347E167D3EA900E66DFC /* Frameworks */ = {
+		FEA1B9271BCCE51600ABB2EC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAC53486167D3EA900E66DFC /* UIKit.framework in Frameworks */,
-				CAC53488167D3EA900E66DFC /* Foundation.framework in Frameworks */,
-				CAC5348A167D3EA900E66DFC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEA1B9411BCCE56100ABB2EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CAC53476167D3EA900E66DFC = {
+		FEA1B9211BCCE51600ABB2EC = {
 			isa = PBXGroup;
 			children = (
-				CAC5348B167D3EA900E66DFC /* NSOrderedDictionary */,
-				CAC53484167D3EA900E66DFC /* Frameworks */,
-				CAC53482167D3EA900E66DFC /* Products */,
+				FEA1B92C1BCCE51600ABB2EC /* M13OrderedDictionary */,
+				FEA1B9451BCCE56100ABB2EC /* M13OrderedDictionaryTests */,
+				FEA1B92B1BCCE51600ABB2EC /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		CAC53482167D3EA900E66DFC /* Products */ = {
+		FEA1B92B1BCCE51600ABB2EC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CAC53481167D3EA900E66DFC /* M13OrderedDictionary.app */,
+				FEA1B92A1BCCE51600ABB2EC /* M13OrderedDictionary */,
+				FEA1B9441BCCE56100ABB2EC /* M13OrderedDictionaryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CAC53484167D3EA900E66DFC /* Frameworks */ = {
+		FEA1B92C1BCCE51600ABB2EC /* M13OrderedDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				CAC53485167D3EA900E66DFC /* UIKit.framework */,
-				CAC53487167D3EA900E66DFC /* Foundation.framework */,
-				CAC53489167D3EA900E66DFC /* CoreGraphics.framework */,
+				FEA1B92D1BCCE51600ABB2EC /* main.m */,
+				FEA1B94C1BCCE5C700ABB2EC /* M13OrderedDictionary.h */,
+				FEA1B94D1BCCE5C700ABB2EC /* M13OrderedDictionary.m */,
 			);
-			name = Frameworks;
+			name = M13OrderedDictionary;
 			sourceTree = "<group>";
 		};
-		CAC5348B167D3EA900E66DFC /* NSOrderedDictionary */ = {
+		FEA1B9451BCCE56100ABB2EC /* M13OrderedDictionaryTests */ = {
 			isa = PBXGroup;
 			children = (
-				CAC53494167D3EA900E66DFC /* AppDelegate.h */,
-				CAC53495167D3EA900E66DFC /* AppDelegate.m */,
-				CA0F92861896BC2A0034DCB3 /* M13OrderedDictionary.h */,
-				CA0F92871896BC2A0034DCB3 /* M13OrderedDictionary.m */,
-				CAC5348C167D3EA900E66DFC /* Supporting Files */,
+				FEA1B9461BCCE56100ABB2EC /* M13OrderedDictionaryTests.swift */,
+				FEA1B9541BCCE69B00ABB2EC /* Supporting Files */,
 			);
-			path = NSOrderedDictionary;
+			name = M13OrderedDictionaryTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		CAC5348C167D3EA900E66DFC /* Supporting Files */ = {
+		FEA1B9541BCCE69B00ABB2EC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CAC5348D167D3EA900E66DFC /* M13OrderedDictionary-Info.plist */,
-				CAC5348E167D3EA900E66DFC /* InfoPlist.strings */,
-				CAC53491167D3EA900E66DFC /* main.m */,
-				CAC53493167D3EA900E66DFC /* M13OrderedDictionary-Prefix.pch */,
-				CAC53497167D3EA900E66DFC /* Default.png */,
-				CAC53499167D3EA900E66DFC /* Default@2x.png */,
-				CAC5349B167D3EA900E66DFC /* Default-568h@2x.png */,
+				FEA1B9481BCCE56100ABB2EC /* Info.plist */,
+				FEA1B9551BCCE6E400ABB2EC /* M13OrderedDictionaryTests-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -107,189 +114,264 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CAC53480167D3EA900E66DFC /* M13OrderedDictionary */ = {
+		FEA1B9291BCCE51600ABB2EC /* M13OrderedDictionary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CAC5349F167D3EA900E66DFC /* Build configuration list for PBXNativeTarget "M13OrderedDictionary" */;
+			buildConfigurationList = FEA1B9311BCCE51600ABB2EC /* Build configuration list for PBXNativeTarget "M13OrderedDictionary" */;
 			buildPhases = (
-				CAC5347D167D3EA900E66DFC /* Sources */,
-				CAC5347E167D3EA900E66DFC /* Frameworks */,
-				CAC5347F167D3EA900E66DFC /* Resources */,
+				FEA1B9261BCCE51600ABB2EC /* Sources */,
+				FEA1B9271BCCE51600ABB2EC /* Frameworks */,
+				FEA1B9281BCCE51600ABB2EC /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = M13OrderedDictionary;
-			productName = NSOrderedDictionary;
-			productReference = CAC53481167D3EA900E66DFC /* M13OrderedDictionary.app */;
-			productType = "com.apple.product-type.application";
+			productName = M13OrderedDictionary;
+			productReference = FEA1B92A1BCCE51600ABB2EC /* M13OrderedDictionary */;
+			productType = "com.apple.product-type.tool";
+		};
+		FEA1B9431BCCE56100ABB2EC /* M13OrderedDictionaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEA1B9491BCCE56100ABB2EC /* Build configuration list for PBXNativeTarget "M13OrderedDictionaryTests" */;
+			buildPhases = (
+				FEA1B9401BCCE56100ABB2EC /* Sources */,
+				FEA1B9411BCCE56100ABB2EC /* Frameworks */,
+				FEA1B9421BCCE56100ABB2EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEA1B9571BCCE85B00ABB2EC /* PBXTargetDependency */,
+			);
+			name = M13OrderedDictionaryTests;
+			productName = M13OrderedDictionaryTests;
+			productReference = FEA1B9441BCCE56100ABB2EC /* M13OrderedDictionaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CAC53478167D3EA900E66DFC /* Project object */ = {
+		FEA1B9221BCCE51600ABB2EC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
-				ORGANIZATIONNAME = "Brandon McQuilkin";
+				CLASSPREFIX = M13;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = M13OrderedDictionary;
+				TargetAttributes = {
+					FEA1B9291BCCE51600ABB2EC = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					FEA1B9431BCCE56100ABB2EC = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
 			};
-			buildConfigurationList = CAC5347B167D3EA900E66DFC /* Build configuration list for PBXProject "M13OrderedDictionary" */;
+			buildConfigurationList = FEA1B9251BCCE51600ABB2EC /* Build configuration list for PBXProject "M13OrderedDictionary" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = CAC53476167D3EA900E66DFC;
-			productRefGroup = CAC53482167D3EA900E66DFC /* Products */;
+			mainGroup = FEA1B9211BCCE51600ABB2EC;
+			productRefGroup = FEA1B92B1BCCE51600ABB2EC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CAC53480167D3EA900E66DFC /* M13OrderedDictionary */,
+				FEA1B9291BCCE51600ABB2EC /* M13OrderedDictionary */,
+				FEA1B9431BCCE56100ABB2EC /* M13OrderedDictionaryTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CAC5347F167D3EA900E66DFC /* Resources */ = {
+		FEA1B9421BCCE56100ABB2EC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAC53490167D3EA900E66DFC /* InfoPlist.strings in Resources */,
-				CAC53498167D3EA900E66DFC /* Default.png in Resources */,
-				CAC5349A167D3EA900E66DFC /* Default@2x.png in Resources */,
-				CAC5349C167D3EA900E66DFC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CAC5347D167D3EA900E66DFC /* Sources */ = {
+		FEA1B9261BCCE51600ABB2EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAC53492167D3EA900E66DFC /* main.m in Sources */,
-				CA0F92881896BC2A0034DCB3 /* M13OrderedDictionary.m in Sources */,
-				CAC53496167D3EA900E66DFC /* AppDelegate.m in Sources */,
+				FEA1B94F1BCCE5E400ABB2EC /* main.m in Sources */,
+				FEA1B94E1BCCE5C700ABB2EC /* M13OrderedDictionary.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEA1B9401BCCE56100ABB2EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEA1B9471BCCE56100ABB2EC /* M13OrderedDictionaryTests.swift in Sources */,
+				FEA1B9501BCCE62A00ABB2EC /* M13OrderedDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		CAC5348E167D3EA900E66DFC /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CAC5348F167D3EA900E66DFC /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		FEA1B9571BCCE85B00ABB2EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEA1B9291BCCE51600ABB2EC /* M13OrderedDictionary */;
+			targetProxy = FEA1B9561BCCE85B00ABB2EC /* PBXContainerItemProxy */;
 		};
-/* End PBXVariantGroup section */
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		CAC5349D167D3EA900E66DFC /* Debug */ = {
+		FEA1B92F1BCCE51600ABB2EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		CAC5349E167D3EA900E66DFC /* Release */ = {
+		FEA1B9301BCCE51600ABB2EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		CAC534A0167D3EA900E66DFC /* Debug */ = {
+		FEA1B9321BCCE51600ABB2EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NSOrderedDictionary/M13OrderedDictionary-Prefix.pch";
-				INFOPLIST_FILE = "NSOrderedDictionary/M13OrderedDictionary-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = M13OrderedDictionary;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				WRAPPER_EXTENSION = app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		CAC534A1167D3EA900E66DFC /* Release */ = {
+		FEA1B9331BCCE51600ABB2EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NSOrderedDictionary/M13OrderedDictionary-Prefix.pch";
-				INFOPLIST_FILE = "NSOrderedDictionary/M13OrderedDictionary-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = M13OrderedDictionary;
-				WRAPPER_EXTENSION = app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FEA1B94A1BCCE56100ABB2EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.M13OrderedDictionary.M13OrderedDictionaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tests/M13OrderedDictionaryTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FEA1B94B1BCCE56100ABB2EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.M13OrderedDictionary.M13OrderedDictionaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tests/M13OrderedDictionaryTests-Bridging-Header.h";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CAC5347B167D3EA900E66DFC /* Build configuration list for PBXProject "M13OrderedDictionary" */ = {
+		FEA1B9251BCCE51600ABB2EC /* Build configuration list for PBXProject "M13OrderedDictionary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CAC5349D167D3EA900E66DFC /* Debug */,
-				CAC5349E167D3EA900E66DFC /* Release */,
+				FEA1B92F1BCCE51600ABB2EC /* Debug */,
+				FEA1B9301BCCE51600ABB2EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CAC5349F167D3EA900E66DFC /* Build configuration list for PBXNativeTarget "M13OrderedDictionary" */ = {
+		FEA1B9311BCCE51600ABB2EC /* Build configuration list for PBXNativeTarget "M13OrderedDictionary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CAC534A0167D3EA900E66DFC /* Debug */,
-				CAC534A1167D3EA900E66DFC /* Release */,
+				FEA1B9321BCCE51600ABB2EC /* Debug */,
+				FEA1B9331BCCE51600ABB2EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEA1B9491BCCE56100ABB2EC /* Build configuration list for PBXNativeTarget "M13OrderedDictionaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEA1B94A1BCCE56100ABB2EC /* Debug */,
+				FEA1B94B1BCCE56100ABB2EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CAC53478167D3EA900E66DFC /* Project object */;
+	rootObject = FEA1B9221BCCE51600ABB2EC /* Project object */;
 }
