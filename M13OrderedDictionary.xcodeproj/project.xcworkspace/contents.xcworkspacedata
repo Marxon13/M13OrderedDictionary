@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:NSOrderedDictionary.xcodeproj">
+      location = "self:M13OrderedDictionary.xcodeproj">
    </FileRef>
 </Workspace>
