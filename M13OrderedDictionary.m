@@ -455,7 +455,7 @@
     int i = 0;
     while (i < temp1.count && object == nil) {
         if ([[self objectForKey:[temp1 objectAtIndex:i]] isEqual:[otherOrderedDictionary objectForKey:[temp1 objectAtIndex:i]]]) {
-            objects = [self objectForKey:[temp1 objectAtIndex:i]];
+            object = [self objectForKey:[temp1 objectAtIndex:i]];
         }
     }
     return object;
